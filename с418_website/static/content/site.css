@@ -1,12 +1,39 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: 'Bookman Old Style' !important; /*'Bookman Old Style' !important;*/
+}
+
+h1, h2, h3, h4, h5, h6, p, a, span, div, button {
+    font-family: 'Bookman Old Style' !important; /*Embrima !important;*/
+}
+
+p, button {
+    font-size: 17px; /* Или любой другой размер */
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.head {
+    opacity: 0;
+    transform: translateY(-20px); /* Немного поднято вверх */
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -42,7 +69,7 @@ input[type="checkbox"].input-validation-error {
 }
 
 .head {
-    background-color: #0099ff;
+    background: linear-gradient(to right, #00c6ff, #0072ff); /*#0099ff;*/
     text-align: center;
     padding: 50px;
     color: white;
@@ -54,4 +81,57 @@ input[type="checkbox"].input-validation-error {
     border-radius: 20px;
     margin: 20px 0;
     border: 5px solid white;
+}
+
+.btn-custom {
+    background-color: #0099ff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Bookman Old Style' !important;
+    font-size: 17px;
+}
+
+.btn-custom:hover {
+    background-color: #0072ff;
+    font-family: 'Bookman Old Style' !important;
+    font-size: 17px;
+    color: #ffeb3b
+}
+
+.center-blocks {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 150px; /* Расстояние между блоками */
+    padding: 24px;
+    
+}
+
+.col-md-4 {
+    width: 30%; /* Устанавливаем ширину для каждого блока */
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-nav > li > a {
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+.navbar-inverse {
+    background-color: #3636FF !important; /* Глубокий темно-синий фон */
+    border-bottom: 2px solid white; /* Светло-синий разделитель */
+}
+
+.navbar-inverse .navbar-brand, 
+.navbar-inverse .navbar-nav > li > a {
+    color: white !important; /* Белый текст */
+}
+
+.navbar-inverse .navbar-brand:hover, 
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #ffeb3b !important; /* Жёлтый текст при наведении */
 }
