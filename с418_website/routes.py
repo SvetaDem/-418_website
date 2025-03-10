@@ -33,3 +33,8 @@ def about():
         message='Your application description page.',
         year=datetime.now().year
     )
+
+@route('/songs')
+@view('songs')
+def songs():
+    return template('songs')

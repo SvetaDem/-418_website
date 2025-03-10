@@ -18,7 +18,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>с418_website</Name>
     <RootNamespace>с418_website</RootNamespace>
-    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,6 +37,7 @@
     <Folder Include="static\content\" />
     <Folder Include="static\fonts\" />
     <Folder Include="static\scripts\" />
+    <Folder Include="static\images\" />
     <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>
@@ -63,16 +64,30 @@
     <Content Include="static\scripts\respond.js" />
     <Content Include="static\scripts\respond.min.js" />
     <Content Include="static\scripts\_references.js" />
+    <Content Include="static\images\148_soundtrack.jpg" />
+    <Content Include="static\images\Face.jpg" />
+    <Content Include="static\images\face2.jpg" />
+    <Content Include="static\images\LCMSMIP_soudtrack.jpg" />
+    <Content Include="static\images\logo.jpg" />
+    <Content Include="static\images\minecraft.jpg" />
+    <Content Include="static\images\MinecraftVolumeBeta.jpg" />
+    <Content Include="static\images\officialMinecraftSoundtrack.jpg" />
+    <Content Include="static\images\one_soundtrack.png" />
+    <Content Include="static\images\SYOSD_soundtrack.jpg" />
+    <Content Include="static\images\vibe.jpg" />
     <Content Include="views\about.tpl" />
     <Content Include="views\contact.tpl" />
     <Content Include="views\index.tpl" />
     <Content Include="views\layout.tpl" />
+    <Content Include="views\songs.tpl">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="env\">
-      <Id>env</Id>
-      <Version>0.0</Version>
-      <Description>env (Python 3.12 (64-bit))</Description>
+    <Interpreter Include="env1\">
+      <Id>env1</Id>
+      <Version>3.10</Version>
+      <Description>env1 (Python 3.10 (64-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
