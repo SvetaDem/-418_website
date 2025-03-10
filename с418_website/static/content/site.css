@@ -1,6 +1,18 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: Courier New, Courier, monospace !important; /*'Bookman Old Style' !important;*/
+    font-weight: 600; /* Умеренно утолщенный текст */
+}
+
+h1, h2, h3, h4, h5, h6, p, a, span, div, button {
+    font-family: Courier New, Courier !important;
+    font-weight: 600; /* Умеренно утолщенный текст */
+}
+
+p, button {
+    font-size: 17px; /* Или любой другой размер */
+    font-weight: 600; /* Умеренно утолщенный текст */
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -40,3 +52,93 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+.head {
+    background: linear-gradient(to right, #00c6ff, #0072ff); /*#0099ff;*/
+    text-align: center;
+    padding: 50px;
+    color: white;
+}
+
+.album-cover {
+    max-width: 300px;
+    height: auto;
+    border-radius: 20px;
+    margin: 20px 0;
+    border: 5px solid white;
+}
+
+.btn-custom {
+    background-color: #0099ff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: "Courier New", Courier, monospace !important; /* Принудительно применяем шрифт */
+    font-weight: 600; /* Делаем чуть толще */
+    font-size: 18px;
+}
+
+.btn-custom:hover {
+    background-color: #0072ff;
+    font-family: "Courier New", Courier, monospace !important; /* Принудительно применяем шрифт */
+    font-weight: 600; /* Делаем чуть толще */
+    font-size: 18px;
+}
+
+.center-blocks {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 150px; /* Расстояние между блоками */
+    padding: 24px;
+    
+}
+
+.col-md-4 {
+    width: 30%; /* Устанавливаем ширину для каждого блока */
+    justify-content: center;
+    align-items: center;
+}
+/* Основные стили для списка песен */
+.song-list {
+    margin-top: 20px;
+}
+
+/* Стили для каждого элемента песни */
+.song-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .song-item:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+/* Стили для обложки альбома */
+.album-cover {
+    max-width: 150px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+/* Стили для деталей песни */
+.song-details {
+    flex: 1;
+}
+
+    .song-details h3 {
+        margin-top: 0;
+    }
+
+    .song-details p {
+        margin: 5px 0;
+    }
