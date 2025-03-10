@@ -40,3 +40,18 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+.head {
+    background-color: #0099ff;
+    text-align: center;
+    padding: 50px;
+    color: white;
+}
+
+.album-cover {
+    max-width: 300px;
+    height: auto;
+    border-radius: 20px;
+    margin: 20px 0;
+    border: 5px solid white;
+}
