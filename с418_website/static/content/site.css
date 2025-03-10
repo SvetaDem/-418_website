@@ -122,7 +122,7 @@ input[type="checkbox"].input-validation-error {
 }
 
 .navbar-inverse {
-    background-color: #3636FF !important; /* Глубокий темно-синий фон */
+    background-color: #007bff !important; /* Глубокий темно-синий фон */
     border-bottom: 2px solid white; /* Светло-синий разделитель */
 }
 
@@ -134,4 +134,43 @@ input[type="checkbox"].input-validation-error {
 .navbar-inverse .navbar-brand:hover, 
 .navbar-inverse .navbar-nav > li > a:hover {
     color: #ffeb3b !important; /* Жёлтый текст при наведении */
+}
+
+
+
+.description-container {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    opacity: 0;
+    transform: translateY(-20px); /* Немного поднято вверх */
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.description-text {
+    flex: 1;
+    text-align: left;
+}
+
+.description-text h3 {
+    color: #0072ff;
+    padding-bottom: 10px;
+ }
+
+.quote-box {
+    border-left: 5px solid #0072ff;
+    background-color: rgba(0, 114, 255, 0.1);
+    padding: 15px;
+    font-style: italic;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+.quote {
+    margin: 0;
+    font-size: 16px;
 }
