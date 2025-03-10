@@ -34,13 +34,12 @@ def about():
         year=datetime.now().year
     )
 
-
 @route('/biography')
 @view('biography')
 def biography():
     """Renders the biography page."""
     return dict(
-        title='Биография C418',
-        message='Информация о композиторе C418.',
+        title='Biography C418',
+        message='Information about composer C418.',
         year=datetime.now().year
     )
