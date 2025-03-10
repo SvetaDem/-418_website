@@ -1,7 +1,7 @@
 % rebase('layout.tpl', title=title, year=year)
 
 <div class="description-container">
-    <img src="static/images/face3.jpg" class="album-cover">
+    <img src="static/images/face3.jpg" class="album-cover-all">
     <div class="description-text">
         <h3>About This Website</h3>
         <p>
