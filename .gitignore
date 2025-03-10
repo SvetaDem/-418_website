@@ -5,6 +5,8 @@
 
 # dotenv files
 .env
+env/
+с418_website/env
 
 # User-specific files
 *.rsuser
