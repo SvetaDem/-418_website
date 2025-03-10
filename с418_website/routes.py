@@ -2,7 +2,7 @@
 Routes and views for the bottle application.
 """
 
-from bottle import route, view
+from bottle import route, view, template
 from datetime import datetime
 
 @route('/')
