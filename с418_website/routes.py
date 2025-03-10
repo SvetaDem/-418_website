@@ -38,7 +38,12 @@ def about():
 @route('/songs')
 @view('songs')
 def songs():
-    return template('songs')
+    """Renders the songs page."""
+    return dict(
+        title='C418 Songs',
+        message='List of C418 Songs in Minecraft.',
+        year=datetime.now().year
+    )
 
 @route('/biography')
 @view('biography')
