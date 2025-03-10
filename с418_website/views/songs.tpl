@@ -43,7 +43,7 @@
 
         <!-- Minecraft - Volume Alpha -->
         <div class="song-item">
-            <img src="/static/images/officialMinecraftSoundtrack.jpg.jpg" alt="Minecraft - Volume Alpha" class="album-cover">
+            <img src="/static/images/officialMinecraftSoundtrack.jpg" alt="Minecraft - Volume Alpha" class="album-cover">
             <div class="song-details">
                 <h3>Minecraft - Volume Alpha</h3>
                 <p><strong>Genres:</strong> Ambient, Minecraft, Soundtrack</p>
