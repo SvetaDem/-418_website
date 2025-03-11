@@ -14,7 +14,7 @@
             Want to know more about me, my life?
             Then click on the link below to learn my story!
         </p>
-        <p><a class="btn btn-custom" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
+        <p><a class="btn btn-custom" href="/biography">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h2>My Music</h2>
