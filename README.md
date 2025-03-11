@@ -17,7 +17,7 @@ Make sure you have the following installed on your system:
 
 - Clone the repository:
 
-git clone https://github.com/yourusername/c418-website.git
+git clone https://github.com/SvetaDem/-418-website.git
 
 - Create and activate a virtual environment (env):
 Run the application.
