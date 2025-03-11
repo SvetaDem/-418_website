@@ -25,4 +25,4 @@
         </p>
         <p><a class="btn btn-custom" href="/songs">Learn more &raquo;</a></p>
     </div>
-</div>
+</div></div>

@@ -1,8 +1,13 @@
 % rebase('layout.tpl', title='C418 Songs', year=2023)
 
-<div class="move">
-    <h2>Songs by C418</h2>
-    <p>Explore the iconic music of C418, known for his work on Minecraft and other electronic compositions.</p>
+<div class="contact-container">
+    <div class="contact-info">
+        <h3>Songs by C418</h3>
+        <p>Explore the iconic music of C418, known for his work on Minecraft and other electronic compositions.</p>
+    </div>
+</div>
+
+<div class="contact-container">
     <div class="song-list">
         <!-- 148 -->
         <div class="song-item">
