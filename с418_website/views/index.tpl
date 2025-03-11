@@ -1,29 +1,28 @@
 % rebase('layout.tpl', title='Home Page', year=year)
 
-<div class="jumbotron">
-    <h1>Bottle</h1>
-    <p class="lead">Bottle is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://bottlepy.org/docs/dev/index.html" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+<div class="head">   
+    <img src="static/images/one_soundtrack.png" class="album-cover-all">
+    <H2>Hi! I'm Daniel, and music is my passion.</H2>
+    <H4>You might have heard my compositions in Minecraft.</H4>
 </div>
 
-<div class="row">
+<div class="center-blocks">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>About me</h2>
+        <hr style="border: 2px solid #0099ff;" />
         <p>
-            Bottle gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Want to know more about me, my life?
+            Then click on the link below to learn my story!
         </p>
-        <p><a class="btn btn-default" href="http://bottlepy.org/docs/dev/index.html">Learn more &raquo;</a></p>
+        <p><a class="btn btn-custom" href="/biography">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="/biography">Learn more &raquo;</a></p>
+        <h2>My Music</h2>
+        <hr style="border: 2px solid #0099ff;" />
+        <p>
+            Dive into my world of sound!  
+            Listen to my albums, discover new tracks, and feel the music.
+        </p>
+        <p><a class="btn btn-custom" href="/songs">Learn more &raquo;</a></p>
     </div>
 </div>

@@ -2,8 +2,9 @@
 Routes and views for the bottle application.
 """
 
-from bottle import route, view
+from bottle import route, view, template
 from datetime import datetime
+
 
 @route('/')
 @route('/home')
@@ -33,6 +34,11 @@ def about():
         message='Your application description page.',
         year=datetime.now().year
     )
+
+@route('/songs')
+@view('songs')
+def songs():
+    return template('songs')
 
 @route('/biography')
 @view('biography')

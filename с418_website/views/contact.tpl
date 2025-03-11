@@ -1,16 +1,17 @@
 % rebase('layout.tpl', title=title, year=year)
 
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
-
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div class="contact-container">
+    <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p><strong>GUAP FSPO</strong></p>
+        <p>196128, St. Petersburg, Moskovsky Prospekt, 149v, Literature A</p>
+        <p><abbr title="Phone">Phone:</abbr> +7(996)773-75-42</p>
+    </div>
+</div>
+<div class="contact-container">
+    <div class="contact-email">
+        <h3>Get in Touch</h3>
+        <p><strong>Support:</strong> <a href="mailto:sveta_dem06@mail.ru">sveta_dem06@mail.ru</a></p>
+        <p><strong>Marketing:</strong> <a href="mailto:sveta_dem06@mail.ru">sveta_dem06@mail.ru</a></p>
+    </div>
+</div>
