@@ -28,10 +28,10 @@ Run the application.
 
 ## Authors
 
-Demidova S. - SvetaDem
-Ravilova D. - miasimaRav
-Zolotova D. - WhoWhoWhy
-Bessonova V. - PupickShnupick
+- Demidova S. - SvetaDem
+- Ravilova D. - miasimaRav
+- Zolotova D. - WhoWhoWhy
+- Bessonova V. - PupickShnupick
 
 ## License
 
