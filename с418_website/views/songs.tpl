@@ -1,9 +1,8 @@
 % rebase('layout.tpl', title='C418 Songs', year=2023)
 
-<div class="container">
+<div class="move">
     <h2>Songs by C418</h2>
     <p>Explore the iconic music of C418, known for his work on Minecraft and other electronic compositions.</p>
-
     <div class="song-list">
         <!-- 148 -->
         <div class="song-item">
@@ -43,7 +42,7 @@
 
         <!-- Minecraft - Volume Alpha -->
         <div class="song-item">
-            <img src="/static/images/officialMinecraftSoundtrack.jpg.jpg" alt="Minecraft - Volume Alpha" class="album-cover">
+            <img src="/static/images/officialMinecraftSoundtrack.jpg" alt="Minecraft - Volume Alpha" class="album-cover">
             <div class="song-details">
                 <h3>Minecraft - Volume Alpha</h3>
                 <p><strong>Genres:</strong> Ambient, Minecraft, Soundtrack</p>
