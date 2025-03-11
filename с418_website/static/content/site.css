@@ -1,24 +1,39 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    font-family: Courier New, Courier, monospace !important; /*'Bookman Old Style' !important;*/
-    font-weight: 600; /* Умеренно утолщенный текст */
+    font-family: 'Bookman Old Style' !important; /*'Bookman Old Style' !important;*/
 }
 
 h1, h2, h3, h4, h5, h6, p, a, span, div, button {
-    font-family: Courier New, Courier !important;
-    font-weight: 600; /* Умеренно утолщенный текст */
+    font-family: 'Bookman Old Style' !important; /*Embrima !important;*/
 }
 
 p, button {
     font-size: 17px; /* Или любой другой размер */
-    font-weight: 600; /* Умеренно утолщенный текст */
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.head {
+    opacity: 0;
+    transform: translateY(-20px); /* Немного поднято вверх */
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -60,7 +75,7 @@ input[type="checkbox"].input-validation-error {
     color: white;
 }
 
-.album-cover {
+.album-cover-all {
     max-width: 300px;
     height: auto;
     border-radius: 20px;
@@ -74,16 +89,15 @@ input[type="checkbox"].input-validation-error {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    font-family: "Courier New", Courier, monospace !important; /* Принудительно применяем шрифт */
-    font-weight: 600; /* Делаем чуть толще */
-    font-size: 18px;
+    font-family: 'Bookman Old Style' !important;
+    font-size: 17px;
 }
 
 .btn-custom:hover {
     background-color: #0072ff;
-    font-family: "Courier New", Courier, monospace !important; /* Принудительно применяем шрифт */
-    font-weight: 600; /* Делаем чуть толще */
-    font-size: 18px;
+    font-family: 'Bookman Old Style' !important;
+    font-size: 17px;
+    color: #ffeb3b
 }
 
 .center-blocks {
@@ -93,7 +107,6 @@ input[type="checkbox"].input-validation-error {
     align-items: center;
     gap: 150px; /* Расстояние между блоками */
     padding: 24px;
-    
 }
 
 .col-md-4 {
@@ -101,12 +114,110 @@ input[type="checkbox"].input-validation-error {
     justify-content: center;
     align-items: center;
 }
-/* Основные стили для списка песен */
+
+.navbar-nav > li > a {
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+.navbar-inverse {
+    background-color: #007bff !important; /* Глубокий темно-синий фон */
+    border-bottom: 2px solid white; /* Светло-синий разделитель */
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a {
+    color: white !important; /* Белый текст */
+}
+
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #ffeb3b !important; /* Жёлтый текст при наведении */
+}
+
+.description-container {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    opacity: 0;
+    transform: translateY(-20px); /* Немного поднято вверх */
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.description-text {
+    flex: 1;
+    text-align: left;
+}
+
+.description-text h3 {
+    color: #0072ff;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #0072ff;
+}
+
+.quote-box {
+    border-left: 5px solid #0072ff;
+    background-color: rgba(0, 114, 255, 0.1);
+    padding: 15px;
+    font-style: italic;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+.quote {
+    margin: 0;
+    font-size: 16px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(0, 114, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-20px); /* Немного поднято вверх */
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.contact-info,
+.contact-email {
+    flex: 1;
+}
+
+.contact-info h3,
+.contact-email h3 {
+    color: #0072ff;
+    border-bottom: 2px solid #0072ff;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.contact-email a {
+    color: #0072ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-email a:hover {
+    text-decoration: underline;
+}
+
+/* Main styles for the song list */
 .song-list {
     margin-top: 20px;
 }
 
-/* Стили для каждого элемента песни */
+/* Styles for each song item */
 .song-item {
     display: flex;
     align-items: center;
@@ -118,27 +229,33 @@ input[type="checkbox"].input-validation-error {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-    .song-item:hover {
+.song-item:hover {
         transform: scale(1.02);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+}
 
-/* Стили для обложки альбома */
+/* Styles for the album cover */
 .album-cover {
     max-width: 150px;
     border-radius: 8px;
     margin-right: 20px;
 }
 
-/* Стили для деталей песни */
+/* Styles for song details */
 .song-details {
     flex: 1;
 }
 
-    .song-details h3 {
-        margin-top: 0;
-    }
+.song-details h3 {
+    margin-top: 0;
+}
 
-    .song-details p {
-        margin: 5px 0;
-    }
+.song-details p {
+    margin: 5px 0;
+}
+
+.move {
+    opacity: 0;
+    transform: translateY(-20px); /* Немного поднято вверх */
+    animation: fadeIn 1.5s ease-in-out forwards;
+}

@@ -52,13 +52,14 @@ audio:not([controls]) {
 }
 
 html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 body {
-  margin: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 a:focus {
@@ -269,6 +270,7 @@ table {
   h3 {
     orphans: 3;
     widows: 3;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   h2,
   h3 {

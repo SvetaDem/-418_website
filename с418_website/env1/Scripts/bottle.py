@@ -1,4 +1,4 @@
-#!C:\Users\Дарья\Source\Repos\-418_website\с418_website\env1\Scripts\python.exe
+#!C:\Users\778\Source\Repos\SvetaDem\-418_website\с418_website\env1\Scripts\python.exe
 # -*- coding: utf-8 -*-
 """
 Bottle is a fast and simple micro-framework for small web applications. It
