@@ -1,4 +1,4 @@
-% rebase('layout.tpl', title='C418 Songs', year=2023)
+% rebase('layout.tpl', title=title, year=year)
 
 <div class="contact-container">
     <div class="contact-info">
