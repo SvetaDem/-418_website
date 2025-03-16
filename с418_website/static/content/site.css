@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, div, button {
 }
 
 p, button {
-    font-size: 17px; /* Или любой другой размер */
+    font-size: 17px; /* Г€Г«ГЁ Г«ГѕГЎГ®Г© Г¤Г°ГіГЈГ®Г© Г°Г Г§Г¬ГҐГ° */
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -19,20 +19,20 @@ p, button {
 }
 
 .head {
-    opacity: 0; /* изначально скрыт */
-    transform: translateY(-20px); /* Немного поднято вверх */
+    opacity: 0; /* ГЁГ§Г­Г Г·Г Г«ГјГ­Г® Г±ГЄГ°Г»ГІ */
+    transform: translateY(-20px); /* ГЌГҐГ¬Г­Г®ГЈГ® ГЇГ®Г¤Г­ГїГІГ® ГўГўГҐГ°Гµ */
     animation: fadeIn 1.5s ease-in-out forwards;
 }
 
 @keyframes fadeIn {
     from {
-        opacity: 0; /* изначально скрыт */
-        transform: translateY(-20px);
+        opacity: 0; /* Г‚ Г­Г Г·Г Г«ГҐ ГЅГ«ГҐГ¬ГҐГ­ГІ Г±ГЄГ°Г»ГІ, ГўГЁГ¤ГЁГ¬Г®Г±ГІГј Г­Г  0 */
+        transform: translateY(-20px); /* ГЅГ«ГҐГ¬ГҐГ­ГІ ГЇГ®Г¤Г­ГїГІ ГўГўГҐГ°Гµ*/
     }
 
     to {
-        opacity: 1; /* появляется */
-        transform: translateY(0); /* опускается */
+        opacity: 1; /* ГЇГ®ГїГўГ«ГїГҐГІГ±Гї */
+        transform: translateY(0); /* Г®ГЇГіГ±ГЄГ ГҐГІГ±Гї */
     }
 }
 
@@ -69,7 +69,7 @@ input[type="checkbox"].input-validation-error {
 }
 
 .head {
-    background: linear-gradient(to right, #00c6ff, #0072ff); /*#0099ff;*/
+    background: linear-gradient(to right, #00c6ff, #0072ff); 
     text-align: center;
     padding: 50px;
     color: white;
@@ -79,15 +79,15 @@ input[type="checkbox"].input-validation-error {
     max-width: 300px;
     height: auto;
     border-radius: 20px;
-    margin: 20px 0; /* верх-вниз, влево-вправо */
-    border: 5px solid white; /* белая рамка */
+    margin: 20px 0; /* ГўГҐГ°Гµ-ГўГ­ГЁГ§, ГўГ«ГҐГўГ®-ГўГЇГ°Г ГўГ® */
+    border: 5px solid white; /* ГЎГҐГ«Г Гї Г°Г Г¬ГЄГ  */
 }
 
 .btn-custom {
     background-color: #0099ff;
     color: white;
     padding: 10px 20px;
-    text-decoration: none; /* без подчеркиваний, надчёркиваний и т.д. */
+    text-decoration: none; /* ГЎГҐГ§ ГЇГ®Г¤Г·ГҐГ°ГЄГЁГўГ Г­ГЁГ©, Г­Г Г¤Г·ВёГ°ГЄГЁГўГ Г­ГЁГ© ГЁ ГІ.Г¤. */
     border-radius: 5px;
     font-family: 'Bookman Old Style' !important;
     font-size: 17px;
@@ -98,20 +98,20 @@ input[type="checkbox"].input-validation-error {
     font-family: 'Bookman Old Style' !important;
     font-size: 17px;
     text-decoration: none;
-    color: #ffeb3b;  /* желтый  текст при наведении */
+    color: #ffeb3b;  /* Г¦ГҐГ«ГІГ»Г©  ГІГҐГЄГ±ГІ ГЇГ°ГЁ Г­Г ГўГҐГ¤ГҐГ­ГЁГЁ */
 }
 
 .center-blocks {
-    display: flex; /* Гибкая (flex) разметка для контейнера (элементы могут и встроку и в столбец располагаться) */
-    text-align: center; /* Центрирует текст внутри элементов */
-    justify-content: center; /* Выравнивание элементов по центру по горизонтали */
-    align-items: center; /* Выравнивание элементов по центру по вертикали */
-    gap: 150px; /* Расстояние между блоками */
+    display: flex; /* ГѓГЁГЎГЄГ Гї (flex) Г°Г Г§Г¬ГҐГІГЄГ  Г¤Г«Гї ГЄГ®Г­ГІГҐГ©Г­ГҐГ°Г  (ГЅГ«ГҐГ¬ГҐГ­ГІГ» Г¬Г®ГЈГіГІ ГЁ ГўГ±ГІГ°Г®ГЄГі ГЁ Гў Г±ГІГ®Г«ГЎГҐГ¶ Г°Г Г±ГЇГ®Г«Г ГЈГ ГІГјГ±Гї) */
+    text-align: center; /* Г–ГҐГ­ГІГ°ГЁГ°ГіГҐГІ ГІГҐГЄГ±ГІ ГўГ­ГіГІГ°ГЁ ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў */
+    justify-content: center; /* Г‚Г»Г°Г ГўГ­ГЁГўГ Г­ГЁГҐ ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў ГЇГ® Г¶ГҐГ­ГІГ°Гі ГЇГ® ГЈГ®Г°ГЁГ§Г®Г­ГІГ Г«ГЁ */
+    align-items: center; /* Г‚Г»Г°Г ГўГ­ГЁГўГ Г­ГЁГҐ ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў ГЇГ® Г¶ГҐГ­ГІГ°Гі ГЇГ® ГўГҐГ°ГІГЁГЄГ Г«ГЁ */
+    gap: 150px; /* ГђГ Г±Г±ГІГ®ГїГ­ГЁГҐ Г¬ГҐГ¦Г¤Гі ГЎГ«Г®ГЄГ Г¬ГЁ */
     padding: 24px;
 }
 
 .col-md-4 {
-    width: 30%; /* Ширина для каждого блока */
+    width: 30%; /* ГГЁГ°ГЁГ­Г  Г¤Г«Гї ГЄГ Г¦Г¤Г®ГЈГ® ГЎГ«Г®ГЄГ  */
     justify-content: center;
     align-items: center;
 }
@@ -122,18 +122,18 @@ input[type="checkbox"].input-validation-error {
 }
 
 .navbar-inverse {
-    background-color: #007bff !important; /* Глубокий темно-синий фон */
-    border-bottom: 2px solid white; /* Светло-синий разделитель */
+    background-color: #007bff !important; /* ГѓГ«ГіГЎГ®ГЄГЁГ© ГІГҐГ¬Г­Г®-Г±ГЁГ­ГЁГ© ГґГ®Г­ */
+    border-bottom: 2px solid white; /* Г‘ГўГҐГІГ«Г®-Г±ГЁГ­ГЁГ© Г°Г Г§Г¤ГҐГ«ГЁГІГҐГ«Гј */
 }
 
 .navbar-inverse .navbar-brand,
 .navbar-inverse .navbar-nav > li > a {
-    color: white !important; /* Белый текст */
+    color: white !important; /* ГЃГҐГ«Г»Г© ГІГҐГЄГ±ГІ */
 }
 
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-nav > li > a:hover {
-    color: #ffeb3b !important; /* Жёлтый текст при наведении */
+    color: #ffeb3b !important; /* Г†ВёГ«ГІГ»Г© ГІГҐГЄГ±ГІ ГЇГ°ГЁ Г­Г ГўГҐГ¤ГҐГ­ГЁГЁ */
 }
 
 .description-container {
@@ -144,26 +144,26 @@ input[type="checkbox"].input-validation-error {
     justify-content: center;
     padding: 40px;
     opacity: 0;
-    transform: translateY(-20px); /* Немного поднято вверх */
-    animation: fadeIn 1.5s ease-in-out forwards; /* ease-in-out делает анимацию более плавной, forwards сохраняет конечное состояние. */
+    transform: translateY(-20px); /* ГЌГҐГ¬Г­Г®ГЈГ® ГЇГ®Г¤Г­ГїГІГ® ГўГўГҐГ°Гµ */
+    animation: fadeIn 1.5s ease-in-out forwards; /* ease-in-out Г¤ГҐГ«Г ГҐГІ Г Г­ГЁГ¬Г Г¶ГЁГѕ ГЎГ®Г«ГҐГҐ ГЇГ«Г ГўГ­Г®Г©, forwards Г±Г®ГµГ°Г Г­ГїГҐГІ ГЄГ®Г­ГҐГ·Г­Г®ГҐ Г±Г®Г±ГІГ®ГїГ­ГЁГҐ. */
 }
 
 .description-text {
-    flex: 1; /* Заполняет доступное пространство */
+    flex: 1; /* Г‡Г ГЇГ®Г«Г­ГїГҐГІ Г¤Г®Г±ГІГіГЇГ­Г®ГҐ ГЇГ°Г®Г±ГІГ°Г Г­Г±ГІГўГ® */
     text-align: left;
 }
 
 .description-text h3 {
     color: #0072ff;
     padding-bottom: 10px;
-    border-bottom: 2px solid #0072ff; /* Синяя линия под заголовком */
+    border-bottom: 2px solid #0072ff; /* Г‘ГЁГ­ГїГї Г«ГЁГ­ГЁГї ГЇГ®Г¤ Г§Г ГЈГ®Г«Г®ГўГЄГ®Г¬ */
 }
 
 .quote-box {
     border-left: 5px solid #0072ff;
     background-color: rgba(0, 114, 255, 0.1);
     padding: 15px;
-    font-style: italic; /* Курсивный текст */
+    font-style: italic; /* ГЉГіГ°Г±ГЁГўГ­Г»Г© ГІГҐГЄГ±ГІ */
     margin-top: 15px;
     border-radius: 8px;
 }
@@ -175,23 +175,23 @@ input[type="checkbox"].input-validation-error {
 
 .contact-container {
     display: flex;
-    justify-content: space-between; /* Элементы распределены по ширине */
-    align-items: flex-start; /* Выравнивание элементов по верхнему краю */
+    justify-content: space-between; /* ГќГ«ГҐГ¬ГҐГ­ГІГ» Г°Г Г±ГЇГ°ГҐГ¤ГҐГ«ГҐГ­Г» ГЇГ® ГёГЁГ°ГЁГ­ГҐ */
+    align-items: flex-start; /* Г‚Г»Г°Г ГўГ­ГЁГўГ Г­ГЁГҐ ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў ГЇГ® ГўГҐГ°ГµГ­ГҐГ¬Гі ГЄГ°Г Гѕ */
     gap: 40px;
     max-width: 700px;
     margin: 40px auto;
     padding: 20px;
     background: rgba(0, 114, 255, 0.1);
     border-radius: 12px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); /* Смещение вправо, вниз, размытие, также прозрачность 10% */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); /* Г‘Г¬ГҐГ№ГҐГ­ГЁГҐ ГўГЇГ°Г ГўГ®, ГўГ­ГЁГ§, Г°Г Г§Г¬Г»ГІГЁГҐ, ГІГ ГЄГ¦ГҐ ГЇГ°Г®Г§Г°Г Г·Г­Г®Г±ГІГј 10% */
     opacity: 0;
-    transform: translateY(-20px); /* Немного поднято вверх */
+    transform: translateY(-20px); /* ГЌГҐГ¬Г­Г®ГЈГ® ГЇГ®Г¤Г­ГїГІГ® ГўГўГҐГ°Гµ */
     animation: fadeIn 1.5s ease-in-out forwards;
 }
 
 .contact-info,
 .contact-email {
-    flex: 1; /* Оба блока занимают равное пространство */
+    flex: 1; /* ГЋГЎГ  ГЎГ«Г®ГЄГ  Г§Г Г­ГЁГ¬Г ГѕГІ Г°Г ГўГ­Г®ГҐ ГЇГ°Г®Г±ГІГ°Г Г­Г±ГІГўГ® */
 }
 
 .contact-info h3,
@@ -212,31 +212,31 @@ input[type="checkbox"].input-validation-error {
     text-decoration: underline;
 }
 
-/* Общий стиль для блока с песней */
+/* ГЋГЎГ№ГЁГ© Г±ГІГЁГ«Гј Г¤Г«Гї ГЎГ«Г®ГЄГ  Г± ГЇГҐГ±Г­ГҐГ© */
 .song-item {
-    display: flex;
+    display: flex; /*ГЇГҐГ±Г­Гї ГЁ ГҐВё Г®ГЎГ«Г®Г¦ГЄГ  ГўГ»Г°Г ГўГ­ГЁГўГ ГѕГІГ±Гї Гў Г®Г¤Г­Гі Г«ГЁГ­ГЁГѕ*/
     align-items: center;
     margin-bottom: 15px;
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Г¤Г®ГЎГ ГўГ«ГїГҐГІ ГЅГґГґГҐГЄГІ ГЇГ°ГЁ Г­Г ГўГҐГ¤ГҐГ­ГЁГЁ */
 }
 
-    .song-item:hover {
+    .song-item:hover { /* Г±Г°Г ГЎГ ГІГ»ГўГ ГҐГІ ГЇГ°ГЁ Г­Г ГўГҐГ¤ГҐГ­ГЁГЁ ГЄГіГ°Г±Г®Г°Г  (:hover) */
         transform: scale(1.02);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-/* Оформление изображения альбома */
+/* ГЋГґГ®Г°Г¬Г«ГҐГ­ГЁГҐ ГЁГ§Г®ГЎГ°Г Г¦ГҐГ­ГЁГї Г Г«ГјГЎГ®Г¬Г  */
 .album-cover {
     max-width: 120px;
     border-radius: 8px;
     margin-right: 15px;
 }
 
-/* Блок с информацией о песне */
+/* ГЃГ«Г®ГЄ Г± ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГҐГ© Г® ГЇГҐГ±Г­ГҐ */
 .song-details {
     flex: 1;
     text-align: left;
@@ -251,8 +251,8 @@ input[type="checkbox"].input-validation-error {
     margin: 5px 0;
 }
 
-.move { /*Анимация появления */
+.move { /*ГЂГ­ГЁГ¬Г Г¶ГЁГї ГЇГ®ГїГўГ«ГҐГ­ГЁГї */
     opacity: 0;
-    transform: translateY(-20px); /* Немного поднято вверх */
+    transform: translateY(-20px); /* ГЌГҐГ¬Г­Г®ГЈГ® ГЇГ®Г¤Г­ГїГІГ® ГўГўГҐГ°Гµ */
     animation: fadeIn 1.5s ease-in-out forwards;
 }
