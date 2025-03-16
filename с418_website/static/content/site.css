@@ -26,8 +26,8 @@ p, button {
 
 @keyframes fadeIn {
     from {
-        opacity: 0;
-        transform: translateY(-20px);
+        opacity: 0; /* В начале элемент скрыт, видимость на 0 */
+        transform: translateY(-20px); /* элемент поднят вверх*/
     }
 
     to {
@@ -69,7 +69,7 @@ input[type="checkbox"].input-validation-error {
 }
 
 .head {
-    background: linear-gradient(to right, #00c6ff, #0072ff); /*#0099ff;*/
+    background: linear-gradient(to right, #00c6ff, #0072ff); 
     text-align: center;
     padding: 50px;
     color: white;
@@ -214,17 +214,17 @@ input[type="checkbox"].input-validation-error {
 
 /* Общий стиль для блока с песней */
 .song-item {
-    display: flex;
+    display: flex; /*песня и её обложка выравниваются в одну линию*/
     align-items: center;
     margin-bottom: 15px;
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* добавляет эффект при наведении */
 }
 
-    .song-item:hover {
+    .song-item:hover { /* срабатывает при наведении курсора (:hover) */
         transform: scale(1.02);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
