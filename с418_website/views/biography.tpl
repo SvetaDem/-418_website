@@ -4,6 +4,14 @@
     body {
         background: white;
     }
+    .bio-section {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px auto;
+        max-width: 800px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
 </style>
 
 <div class="container body-content">
