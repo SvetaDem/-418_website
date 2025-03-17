@@ -46,6 +46,6 @@
     <div class="bio-section links move">
         <h3>Explore More</h3>
         <a href="/songs" class="btn-custom">Songs</a>
-        <a href="/sheet-music" class="btn-custom">Sheet Music</a>
+        <a href="/index" class="btn-custom">Back to main</a>
     </div>
 </div>
