@@ -55,8 +55,8 @@ def biography():
         year=datetime.now().year
     )
 
-@route('/music_tab')
-@view('music_tab')
+@route('/music_tabs')
+@view('music_tabs')
 def music_tab():
     """Renders the music_tab page."""
     return dict(
