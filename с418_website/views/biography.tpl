@@ -4,14 +4,6 @@
     body {
         background: white;
     }
-    .bio-section {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        margin: 20px auto;
-        max-width: 800px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    }
 </style>
 
 <div class="container body-content">
@@ -46,6 +38,6 @@
     <div class="bio-section links move">
         <h3>Explore More</h3>
         <a href="/songs" class="btn-custom">Songs</a>
-        <a href="/index" class="btn-custom">Back to main</a>
+        <a href="/contact" class="btn-custom">Contacts</a>
     </div>
 </div>
