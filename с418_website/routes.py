@@ -38,7 +38,12 @@ def about():
 @route('/songs')
 @view('songs')
 def songs():
-    return template('songs')
+    """Renders the songs page."""
+    return dict(
+        title='C418 Songs',
+        message='List of C418 Songs in Minecraft.',
+        year=datetime.now().year
+    )
 
 @route('/biography')
 @view('biography')
@@ -47,5 +52,15 @@ def biography():
     return dict(
         title='Biography C418',
         message='Information about composer C418.',
+        year=datetime.now().year
+    )
+
+@route('/music_tabs')
+@view('music_tabs')
+def music_tab():
+    """Renders the music_tab page."""
+    return dict(
+        title='Tabs for C418`s music',
+        message='Tabs for selected music by the C418.',
         year=datetime.now().year
     )
