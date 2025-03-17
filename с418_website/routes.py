@@ -54,3 +54,13 @@ def biography():
         message='Information about composer C418.',
         year=datetime.now().year
     )
+
+@route('/music_tab')
+@view('music_tab')
+def music_tab():
+    """Renders the music_tab page."""
+    return dict(
+        title='Tabs for C418`s music',
+        message='Tabs for selected music by the C418.',
+        year=datetime.now().year
+    )
