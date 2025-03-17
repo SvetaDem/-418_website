@@ -80,6 +80,9 @@
     <Content Include="views\contact.tpl" />
     <Content Include="views\index.tpl" />
     <Content Include="views\layout.tpl" />
+    <Content Include="views\music_tabs.tpl">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="views\songs.tpl">
       <SubType>Code</SubType>
     </Content>
