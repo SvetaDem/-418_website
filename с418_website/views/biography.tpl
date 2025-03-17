@@ -17,7 +17,13 @@
 <div class="container body-content">
      <div class="bio-section">
          <h1 style="color: #0066ff; font-weight: bold; border-bottom: 3px solid #0066ff; padding-bottom: 5px;">Biography of C418</h1>
-         <img src="/static/images/face2.jpg" alt="C418" class="album-cover">
+     </div>
+
+     <div class="bio-section center-blocks"> 
+         <img src="/static/images/face2.jpg" alt="C418" class="album-cover-all"> 
+     </div>
+
+     <div class="bio-section">
          <p>
              Daniel Rosenfeld, better known as C418, is a German composer and sound engineer, best known for his Minecraft soundtracks.
              His music combines elements of ambient and chiptune, creating a unique and immersive atmosphere.
@@ -46,5 +52,4 @@
          <a href="/songs" class="btn-custom">Songs</a>
          <a href="/contact" class="btn-custom">Contact</a>
      </div>
- </div>
- </div>
+</div>
