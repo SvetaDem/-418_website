@@ -251,6 +251,12 @@ input[type="checkbox"].input-validation-error {
         margin: 5px 0;
     }
 
+    .song-details a {
+        display: inline-block;
+        margin-top: 10px; /* Добавляет пространство между текстом и кнопкой */
+    }
+
+
 .move { /* Анимация появления */
     opacity: 0;
     transform: translateY(-20px); /* Немного поднимет вверх */
