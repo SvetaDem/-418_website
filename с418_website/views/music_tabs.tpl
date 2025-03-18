@@ -31,14 +31,3 @@
     </div>
 </div>
 
-<style>
-    .tabs-container {
-        display: flex;
-        justify-content: center;
-    }
-    .tabs-container img {
-        width: 100%;
-        height: auto;
-        max-width: none;
-    }
-</style>

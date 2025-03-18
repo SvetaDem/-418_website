@@ -262,3 +262,14 @@ input[type="checkbox"].input-validation-error {
     transform: translateY(-20px); /* Немного поднимет вверх */
     animation: fadeIn 1.5s ease-in-out forwards;
 }
+
+.tabs-container {
+    display: flex;
+    justify-content: center;
+}
+
+    .tabs-container img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+    }
