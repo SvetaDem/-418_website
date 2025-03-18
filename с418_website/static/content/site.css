@@ -262,3 +262,28 @@ input[type="checkbox"].input-validation-error {
     transform: translateY(-20px); /* Немного поднимет вверх */
     animation: fadeIn 1.5s ease-in-out forwards;
 }
+
+
+.tabs-container { /* Стили контейнеров для табов */
+    display: flex;
+    justify-content: center;
+}
+
+    .tabs-container img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+    }
+
+.button-group {
+    display: flex;
+    gap: 10px; /* Расстояние между кнопками */
+    justify-content: center; /* Выравнивание кнопок по центру */
+    align-items: center; /* Выравнивание кнопок по высоте с текстом */
+}
+
+.contact-container {
+    display: flex;
+    align-items: center; /* Выравнивание элементов внутри контейнера */
+    gap: 20px; /* Расстояние между текстом и кнопками */
+}
