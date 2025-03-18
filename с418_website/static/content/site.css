@@ -4,12 +4,12 @@ body {
     font-family: 'Bookman Old Style' !important; /*'Bookman Old Style' !important;*/
 }
 
-h1, h2, h3, h4, h5, h6, p, a, span, div, button {
+h1, h2, h3, h4, h5, h6, p, a, div, button {
     font-family: 'Bookman Old Style' !important; /*Embrima !important;*/
 }
 
 p, button {
-    font-size: 17px; 
+    font-size: 17px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -69,7 +69,7 @@ input[type="checkbox"].input-validation-error {
 }
 
 .head {
-    background: linear-gradient(to right, #00c6ff, #0072ff); 
+    background: linear-gradient(to right, #00c6ff, #0072ff);
     text-align: center;
     padding: 50px;
     color: white;
@@ -93,13 +93,13 @@ input[type="checkbox"].input-validation-error {
     font-size: 17px;
 }
 
-.btn-custom:hover {
-    background-color: #0072ff;
-    font-family: 'Bookman Old Style' !important;
-    font-size: 17px;
-    text-decoration: none;
-    color: #ffeb3b;  /* жёлтый текст при наведении */
-}
+    .btn-custom:hover {
+        background-color: #0072ff;
+        font-family: 'Bookman Old Style' !important;
+        font-size: 17px;
+        text-decoration: none;
+        color: #ffeb3b; /* жёлтый текст при наведении */
+    }
 
 .center-blocks {
     display: flex; /* Гибкая (flex) разметка для контейнера (элементы могут и в строку, и в столбец располагаться) */
@@ -126,15 +126,15 @@ input[type="checkbox"].input-validation-error {
     border-bottom: 2px solid white; /* Светло-синий разделитель */
 }
 
-.navbar-inverse .navbar-brand,
-.navbar-inverse .navbar-nav > li > a {
-    color: white !important; /* белый текст */
-}
+    .navbar-inverse .navbar-brand,
+    .navbar-inverse .navbar-nav > li > a {
+        color: white !important; /* белый текст */
+    }
 
-.navbar-inverse .navbar-brand:hover,
-.navbar-inverse .navbar-nav > li > a:hover {
-    color: #ffeb3b !important; /* жёлтый текст при наведении */
-}
+        .navbar-inverse .navbar-brand:hover,
+        .navbar-inverse .navbar-nav > li > a:hover {
+            color: #ffeb3b !important; /* жёлтый текст при наведении */
+        }
 
 .description-container {
     display: flex;
@@ -154,11 +154,11 @@ input[type="checkbox"].input-validation-error {
     text-align: left;
 }
 
-.description-text h3 {
-    color: #0072ff;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #0072ff; /* Синяя линия под заголовком */
-}
+    .description-text h3 {
+        color: #0072ff;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #0072ff; /* Синяя линия под заголовком */
+    }
 
 .quote-box {
     border-left: 5px solid #0072ff;
@@ -195,23 +195,23 @@ input[type="checkbox"].input-validation-error {
     flex: 1; /* Каждая ячейка занимает равную промежуточную ширину */
 }
 
-.contact-info h3,
-.contact-email h3 {
-    color: #0072ff;
-    border-bottom: 2px solid #0072ff;
-    padding-bottom: 8px;
-    margin-bottom: 12px;
-}
+    .contact-info h3,
+    .contact-email h3 {
+        color: #0072ff;
+        border-bottom: 2px solid #0072ff;
+        padding-bottom: 8px;
+        margin-bottom: 12px;
+    }
 
-.contact-email a {
-    color: #0072ff;
-    text-decoration: none;
-    font-weight: bold;
-}
+    .contact-email a {
+        color: #0072ff;
+        text-decoration: none;
+        font-weight: bold;
+    }
 
-.contact-email a:hover {
-    text-decoration: underline;
-}
+        .contact-email a:hover {
+            text-decoration: underline;
+        }
 
 /* Совместный стиль для ячейки с песней и её обложкой  */
 .song-item {
@@ -242,17 +242,48 @@ input[type="checkbox"].input-validation-error {
     text-align: left;
 }
 
-.song-details h3 {
-    margin: 0;
-    color: #0072ff;
-}
+    .song-details h3 {
+        margin: 0;
+        color: #0072ff;
+    }
 
-.song-details p {
-    margin: 5px 0;
-}
+    .song-details p {
+        margin: 5px 0;
+    }
+
+    .song-details a {
+        display: inline-block;
+        margin-top: 10px; /* Добавляет пространство между текстом и кнопкой */
+    }
+
 
 .move { /* Анимация появления */
     opacity: 0;
     transform: translateY(-20px); /* Немного поднимет вверх */
     animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+
+.tabs-container { /* Стили контейнеров для табов */
+    display: flex;
+    justify-content: center;
+}
+
+    .tabs-container img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+    }
+
+.button-group {
+    display: flex;
+    gap: 10px; /* Расстояние между кнопками */
+    justify-content: center; /* Выравнивание кнопок по центру */
+    align-items: center; /* Выравнивание кнопок по высоте с текстом */
+}
+
+.contact-container {
+    display: flex;
+    align-items: center; /* Выравнивание элементов внутри контейнера */
+    gap: 20px; /* Расстояние между текстом и кнопками */
 }
