@@ -25,6 +25,7 @@
                     <li><a href="/contact">Contact</a></li>
                     <li><a href="/songs">C418 Songs</a></li>
                     <li><a href="/biography">Biography</a></li>
+                    <li><a href="/activeUsers">Active users</a></li>
                 </ul>
             </div>
         </div>

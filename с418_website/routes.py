@@ -49,3 +49,13 @@ def biography():
         message='Information about composer C418.',
         year=datetime.now().year
     )
+
+@route('/activeUsers')
+@view('activeUsers')
+def contact():
+    """Renders the contact page."""
+    return dict(
+        title='ActiveUsers',
+        message='Your contact page.',
+        year=datetime.now().year
+    )

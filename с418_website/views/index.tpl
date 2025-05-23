@@ -9,7 +9,7 @@
 <div class="center-blocks">
     <div class="col-md-4">
         <h2>About me</h2>
-        <hr style="border: 2px solid #0099ff;" />
+        <hr class="hr-col">
         <p>
             Want to know more about me, my life?
             Then click on the link below to learn my story!
@@ -18,7 +18,7 @@
     </div>
     <div class="col-md-4">
         <h2>My Music</h2>
-        <hr style="border: 2px solid #0099ff;" />
+        <hr class="hr-col">
         <p>
             Dive into my world of sound!  
             Listen to my albums, discover new tracks, and feel the music.

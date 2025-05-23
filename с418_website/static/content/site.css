@@ -18,6 +18,11 @@ p, button {
     padding-right: 15px;
 }
 
+.bio-page {
+    background: linear-gradient(to bottom, #4a90e2, #6a5acd, #483d8b);
+    min-height: 100vh; /* чтобы занимало весь экран */
+}
+
 .head {
     opacity: 0; /* изначально скрыт */
     transform: translateY(-20px); /* Немного поднято вверх */
@@ -114,6 +119,10 @@ input[type="checkbox"].input-validation-error {
     width: 30%; /* Ширина для каждого блока */
     justify-content: center;
     align-items: center;
+}
+
+.hr-col {
+    border: 2px solid #0099ff;
 }
 
 .navbar-nav > li > a {
@@ -224,10 +233,10 @@ input[type="checkbox"].input-validation-error {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-    .song-item:hover {
-        transform: scale(1.02);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+.song-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
 /* Оформление изображения альбома */
 .album-cover {
@@ -255,4 +264,17 @@ input[type="checkbox"].input-validation-error {
     opacity: 0;
     transform: translateY(-20px); /* Немного поднято вверх */
     animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.bio-section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+    color: red;
 }
