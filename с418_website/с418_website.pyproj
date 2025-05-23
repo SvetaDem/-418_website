@@ -34,6 +34,9 @@
     </Compile>
     <Compile Include="app.py" />
     <Compile Include="routes.py" />
+    <Compile Include="valid_phone.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="static\" />

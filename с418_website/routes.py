@@ -70,5 +70,6 @@ def active_users():
     return context(
         title='Active users',
         message='List of active users.',
-        users=load_users()
+        users=load_users(),
+        error=None
     )

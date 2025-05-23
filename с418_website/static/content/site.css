@@ -605,6 +605,11 @@ input[type="checkbox"].input-validation-error {
     box-sizing: border-box;
 }
 
+#userForm textarea {
+    resize: vertical; /* разрешает изменение только по вертикали */
+    min-height: 50px;
+}
+
 /* Стили для кнопки "Add" */
 #userForm input[type="submit"] {
     background-color: #0099ff;

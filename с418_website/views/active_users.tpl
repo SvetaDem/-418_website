@@ -7,6 +7,7 @@
             <h4>Want to add a new user?</h4>
             <a href="#userForm">Go straight to the add form &rarr;</a>
         </div>
+
         <h4>User List</h4>
         % if users:
             % for username, info in users.items():
@@ -49,6 +50,7 @@
                 </tr>
             </table>
             <input type="submit" value="Add">
+            <p id="formError"></p>
         </form>
     </div>
 </div>
@@ -69,8 +71,11 @@ document.getElementById("userForm").addEventListener("submit", function(e) {
     })
     .then(response => response.json())
     .then(res => {
+        const errorMsg = document.getElementById("formError");
         if (res.error) {
-            alert("Error: " + res.error);
+            errorMsg.textContent = res.error;
+            errorMsg.style.color = "red";
+            errorMsg.style.margin = "20px";
         } else {
             alert("User was successfully added!");
             location.reload(); // перезагружаем страницу
