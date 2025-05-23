@@ -30,6 +30,7 @@
 <div class="contact-container">
     <div class="contact-info">
         <h4 class="h4-form">Add User Form</h4>
+        <p id="formError" class="form-error"></p>
         <form id="userForm">
             <table class="table-form">
                 <tr>
@@ -50,7 +51,6 @@
                 </tr>
             </table>
             <input type="submit" value="Add">
-            <p id="formError"></p>
         </form>
     </div>
 </div>
@@ -74,8 +74,6 @@ document.getElementById("userForm").addEventListener("submit", function(e) {
         const errorMsg = document.getElementById("formError");
         if (res.error) {
             errorMsg.textContent = res.error;
-            errorMsg.style.color = "red";
-            errorMsg.style.margin = "20px";
         } else {
             alert("User was successfully added!");
             location.reload(); // перезагружаем страницу

@@ -2,6 +2,7 @@ from bottle import route, run, request, response, template
 import json
 from datetime import datetime
 from valid_phone import is_valid_phone
+import re
 
 DATA_FILE = "users.json"
 
@@ -40,9 +41,24 @@ def active_users_post():
         except ValueError:
             error = "The date should be in the format dd.mm.yyyy."
 
+        # Проверка имени — минимум 2 буквы
+        if len(re.findall(r'[A-Za-zА-Яа-я]', username)) < 2:
+            error = "The username must contain at least 2 letters."
+
+        # Проверка формата даты
         if not error:
-            if not is_valid_phone(phone):
-                error = "Phone number must be in the format +7(999)999-99-99."
+            try:
+                datetime.strptime(date, "%d.%m.%Y")
+            except ValueError:
+                error = "The date should be in the format dd.mm.yyyy."
+
+        # Проверка описания — минимум 3 буквы
+        if not error and len(re.findall(r'[A-Za-zА-Яа-я]', description)) < 3:
+            error = "The description must contain at least 3 letters."
+
+        # Проверка телефона
+        if not error and not is_valid_phone(phone):
+            error = "Phone number must be in the format +7(xxxx)xxx-xx-xx."
 
     if not error:
         users = load_users()

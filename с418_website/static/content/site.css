@@ -650,7 +650,6 @@ input[type="checkbox"].input-validation-error {
 .h4-form {
     border-bottom: 2px black solid;
     display: inline-block;
-    margin-bottom: 25px;
 }
 
 .table-form {
@@ -664,4 +663,12 @@ input[type="checkbox"].input-validation-error {
     border-left: 2px #0072ff solid;
     padding: 10px;
     background: linear-gradient(to right, white, transparent);
+}
+
+.form-error {
+    min-height: 24px; /* чтобы место было всегда, даже без ошибки */
+    color: red;
+    margin-bottom: 15px;
+    transition: opacity 0.3s ease;
+    text-align:center;
 }
