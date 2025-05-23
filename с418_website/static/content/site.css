@@ -4,12 +4,12 @@ body {
     font-family: 'Bookman Old Style' !important; /*'Bookman Old Style' !important;*/
 }
 
-h1, h2, h3, h4, h5, h6, p, a, span, div, button {
+h1, h2, h3, h4, h5, h6, p, a, div, button {
     font-family: 'Bookman Old Style' !important; /*Embrima !important;*/
 }
 
 p, button {
-    font-size: 17px; /* Или любой другой размер */
+    font-size: 17px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -20,24 +20,24 @@ p, button {
 
 .bio-page {
     background: linear-gradient(to bottom, #4a90e2, #6a5acd, #483d8b);
-    min-height: 100vh; /* чтобы занимало весь экран */
+    min-height: 100vh; /* С‡С‚РѕР±С‹ Р·Р°РЅРёРјР°Р»Рѕ РІРµСЃСЊ СЌРєСЂР°РЅ */
 }
 
 .head {
-    opacity: 0; /* изначально скрыт */
-    transform: translateY(-20px); /* Немного поднято вверх */
+    opacity: 0; /* РёР·РЅР°С‡Р°Р»СЊРЅРѕ СЃРєСЂС‹С‚ */
+    transform: translateY(-20px); /* РќРµРјРЅРѕРіРѕ РїРѕРґРЅСЏС‚Рѕ РІРІРµСЂС… */
     animation: fadeIn 1.5s ease-in-out forwards;
 }
 
 @keyframes fadeIn {
     from {
-        opacity: 0; /* изначально скрыт */
-        transform: translateY(-20px);
+        opacity: 0; /* Р’ РЅР°С‡Р°Р»Рµ СЌР»РµРјРµРЅС‚ СЃРєСЂС‹С‚, РІРёРґРёРјРѕСЃС‚СЊ РЅР° 0 */
+        transform: translateY(-20px); /* СЌР»РµРјРµРЅС‚ РїРѕРґРЅСЏС‚ РІРІРµСЂС… */
     }
 
     to {
-        opacity: 1; /* появляется */
-        transform: translateY(0); /* опускается */
+        opacity: 1; /* РїРѕСЏРІР»СЏРµС‚СЃСЏ */
+        transform: translateY(0); /* РѕРїСѓСЃРєР°РµС‚СЃСЏ */
     }
 }
 
@@ -74,7 +74,7 @@ input[type="checkbox"].input-validation-error {
 }
 
 .head {
-    background: linear-gradient(to right, #00c6ff, #0072ff); /*#0099ff;*/
+    background: linear-gradient(to right, #00c6ff, #0072ff);
     text-align: center;
     padding: 50px;
     color: white;
@@ -84,15 +84,15 @@ input[type="checkbox"].input-validation-error {
     max-width: 300px;
     height: auto;
     border-radius: 20px;
-    margin: 20px 0; /* верх-вниз, влево-вправо */
-    border: 5px solid white; /* белая рамка */
+    margin: 20px 0; /* РІРµСЂС…-РЅРёР·, РІР»РµРІРѕ-РІРїСЂР°РІРѕ */
+    border: 5px solid white; /* Р±РµР»Р°СЏ СЂР°РјРєР° */
 }
 
 .btn-custom {
     background-color: #0099ff;
     color: white;
     padding: 10px 20px;
-    text-decoration: none; /* без подчеркиваний, надчёркиваний и т.д. */
+    text-decoration: none; /* Р±РµР· РїРѕРґС‡РµСЂРєРёРІР°РЅРёР№, РЅР°РґС‡С‘СЂРєРёРІР°РЅРёР№ Рё С‚.Рґ. */
     border-radius: 5px;
     font-family: 'Bookman Old Style' !important;
     font-size: 17px;
@@ -103,20 +103,20 @@ input[type="checkbox"].input-validation-error {
     font-family: 'Bookman Old Style' !important;
     font-size: 17px;
     text-decoration: none;
-    color: #ffeb3b;  /* желтый  текст при наведении */
+    color: #ffeb3b;  /* Р¶РµР»С‚С‹Р№  С‚РµРєСЃС‚ РїСЂРё РЅР°РІРµРґРµРЅРёРё */
 }
 
 .center-blocks {
-    display: flex; /* Гибкая (flex) разметка для контейнера (элементы могут и встроку и в столбец располагаться) */
-    text-align: center; /* Центрирует текст внутри элементов */
-    justify-content: center; /* Выравнивание элементов по центру по горизонтали */
-    align-items: center; /* Выравнивание элементов по центру по вертикали */
-    gap: 150px; /* Расстояние между блоками */
+    display: flex; /* Р“РёР±РєР°СЏ (flex) СЂР°Р·РјРµС‚РєР° РґР»СЏ РєРѕРЅС‚РµР№РЅРµСЂР° (СЌР»РµРјРµРЅС‚С‹ РјРѕРіСѓС‚ Рё РІ СЃС‚СЂРѕРєСѓ, Рё РІ СЃС‚РѕР»Р±РµС† СЂР°СЃРїРѕР»Р°РіР°С‚СЊСЃСЏ) */
+    text-align: center; /* Р¦РµРЅС‚СЂРёСЂСѓРµС‚ С‚РµРєСЃС‚ РІРЅСѓС‚СЂРё СЌР»РµРјРµРЅС‚РѕРІ */
+    justify-content: center; /* Р’С‹СЂР°РІРЅРёРІР°РЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РїРѕ С†РµРЅС‚СЂСѓ РїРѕ РіРѕСЂРёР·РѕРЅС‚Р°Р»Рё */
+    align-items: center; /* Р’С‹СЂР°РІРЅРёРІР°РЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РїРѕ С†РµРЅС‚СЂСѓ РїРѕ РІРµСЂС‚РёРєР°Р»Рё */
+    gap: 150px; /* Р Р°СЃСЃС‚РѕСЏРЅРёРµ РјРµР¶РґСѓ Р±Р»РѕРєР°РјРё */
     padding: 24px;
 }
 
 .col-md-4 {
-    width: 30%; /* Ширина для каждого блока */
+    width: 30%; /* РЁРёСЂРёРЅР° РґР»СЏ РєР°Р¶РґРѕРіРѕ Р±Р»РѕРєР° */
     justify-content: center;
     align-items: center;
 }
@@ -131,18 +131,18 @@ input[type="checkbox"].input-validation-error {
 }
 
 .navbar-inverse {
-    background-color: #007bff !important; /* Глубокий темно-синий фон */
-    border-bottom: 2px solid white; /* Светло-синий разделитель */
+    background-color: #007bff !important; /* Р“Р»СѓР±РѕРєРёР№ С‚РµРјРЅРѕ-СЃРёРЅРёР№ С„РѕРЅ */
+    border-bottom: 2px solid white; /* РЎРІРµС‚Р»Рѕ-СЃРёРЅРёР№ СЂР°Р·РґРµР»РёС‚РµР»СЊ */
 }
 
 .navbar-inverse .navbar-brand,
 .navbar-inverse .navbar-nav > li > a {
-    color: white !important; /* Белый текст */
+    color: white !important; /* Р‘РµР»С‹Р№ С‚РµРєСЃС‚ */
 }
 
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-nav > li > a:hover {
-    color: #ffeb3b !important; /* Жёлтый текст при наведении */
+    color: #ffeb3b !important; /* Р–С‘Р»С‚С‹Р№ С‚РµРєСЃС‚ РїСЂРё РЅР°РІРµРґРµРЅРёРё */
 }
 
 .description-container {
@@ -153,26 +153,27 @@ input[type="checkbox"].input-validation-error {
     justify-content: center;
     padding: 40px;
     opacity: 0;
-    transform: translateY(-20px); /* Немного поднято вверх */
-    animation: fadeIn 1.5s ease-in-out forwards; /* ease-in-out делает анимацию более плавной, forwards сохраняет конечное состояние. */
+    transform: translateY(-20px); /* РќРµРјРЅРѕРіРѕ РїРѕРґРЅСЏС‚Рѕ РІРІРµСЂС… */
+    animation: fadeIn 1.5s ease-in-out forwards; /* ease-in-out РґРµР»Р°РµС‚ Р°РЅРёРјР°С†РёСЋ Р±РѕР»РµРµ РїР»Р°РІРЅРѕР№, 
+        forwards СЃРѕС…СЂР°РЅСЏРµС‚ РєРѕРЅРµС‡РЅРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ */
 }
 
 .description-text {
-    flex: 1; /* Заполняет доступное пространство */
+    flex: 1; /* Р—Р°РЅРёРјР°РµС‚ РѕСЃС‚Р°РІС€РµРµСЃСЏ РґРѕСЃС‚СѓРїРЅРѕРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ */
     text-align: left;
 }
 
 .description-text h3 {
     color: #0072ff;
     padding-bottom: 10px;
-    border-bottom: 2px solid #0072ff; /* Синяя линия под заголовком */
+    border-bottom: 2px solid #0072ff; /* РЎРёРЅСЏСЏ Р»РёРЅРёСЏ РїРѕРґ Р·Р°РіРѕР»РѕРІРєРѕРј */
 }
 
 .quote-box {
     border-left: 5px solid #0072ff;
     background-color: rgba(0, 114, 255, 0.1);
     padding: 15px;
-    font-style: italic; /* Курсивный текст */
+    font-style: italic; /* РљСѓСЂСЃРёРІРЅС‹Р№ С‚РµРєСЃС‚ */
     margin-top: 15px;
     border-radius: 8px;
 }
@@ -184,23 +185,23 @@ input[type="checkbox"].input-validation-error {
 
 .contact-container {
     display: flex;
-    justify-content: space-between; /* Элементы распределены по ширине */
-    align-items: flex-start; /* Выравнивание элементов по верхнему краю */
+    justify-content: space-between; /* Р­Р»РµРјРµРЅС‚С‹ СЂР°СЃРїСЂРµРґРµР»РµРЅС‹ РїРѕ С€РёСЂРёРЅРµ */
+    align-items: flex-start; /* Р’С‹СЂР°РІРЅРёРІР°РЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РїРѕ РІРµСЂС…РЅРµРјСѓ РєСЂР°СЋ */
     gap: 40px;
     max-width: 700px;
     margin: 40px auto;
     padding: 20px;
     background: rgba(0, 114, 255, 0.1);
     border-radius: 12px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); /* Смещение вправо, вниз, размытие, также прозрачность 10% */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); /* РЎРјРµС‰РµРЅРёРµ РІРїСЂР°РІРѕ, РІРЅРёР·, СЂР°Р·РјС‹С‚РёРµ, С‚Р°РєР¶Рµ РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊ 10% */
     opacity: 0;
-    transform: translateY(-20px); /* Немного поднято вверх */
+    transform: translateY(-20px); /* РќРµРјРЅРѕРіРѕ РїРѕРґРЅСЏС‚Рѕ РІРІРµСЂС… */
     animation: fadeIn 1.5s ease-in-out forwards;
 }
 
 .contact-info,
 .contact-email {
-    flex: 1; /* Оба блока занимают равное пространство */
+    flex: 1; /* РћР±Р° Р±Р»РѕРєР° Р·Р°РЅРёРјР°СЋС‚ СЂР°РІРЅРѕРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ */
 }
 
 .contact-info h3,
@@ -221,49 +222,79 @@ input[type="checkbox"].input-validation-error {
     text-decoration: underline;
 }
 
-/* Общий стиль для блока с песней */
+/* РЎРѕРІРјРµСЃС‚РЅС‹Р№ СЃС‚РёР»СЊ РґР»СЏ СЏС‡РµР№РєРё СЃ РїРµСЃРЅРµР№ Рё РµС‘ РѕР±Р»РѕР¶РєРѕР№  */
 .song-item {
-    display: flex;
+    display: flex; /* РїРµСЃРЅСЏ Рё РµС‘ РѕР±Р»РѕР¶РєР° РІС‹СЂР°РІРЅРёРІР°СЋС‚СЃСЏ РІ РѕРґРЅСѓ Р»РёРЅРёСЋ */
     align-items: center;
     margin-bottom: 15px;
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* РґРѕР±Р°РІР»СЏРµС‚ СЌС„С„РµРєС‚ РїСЂРё РЅР°РІРµРґРµРЅРёРё */
 }
 
-.song-item:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    .song-item:hover { /* СЃСЂР°Р±Р°С‚С‹РІР°РµС‚ РїСЂРё РЅР°РІРµРґРµРЅРёРё РєСѓСЂСЃРѕСЂР° (:hover) */
+        transform: scale(1.02);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-/* Оформление изображения альбома */
+/* РР·РѕР±СЂР°Р¶РµРЅРёРµ РѕР±Р»РѕР¶РєРё Р°Р»СЊР±РѕРјР° */
 .album-cover {
     max-width: 120px;
     border-radius: 8px;
     margin-right: 15px;
 }
 
-/* Блок с информацией о песне */
 .song-details {
     flex: 1;
     text-align: left;
 }
 
-.song-details h3 {
-    margin: 0;
-    color: #0072ff;
-}
+    .song-details h3 {
+        margin: 0;
+        color: #0072ff;
+    }
 
-.song-details p {
-    margin: 5px 0;
-}
+    .song-details p {
+        margin: 5px 0;
+    }
 
-.move { /*Анимация появления */
+    .song-details a {
+        display: inline-block;
+        margin-top: 10px; /* Р”РѕР±Р°РІР»СЏРµС‚ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ РјРµР¶РґСѓ С‚РµРєСЃС‚РѕРј Рё РєРЅРѕРїРєРѕР№ */
+    }
+
+
+.move { /* РђРЅРёРјР°С†РёСЏ РїРѕСЏРІР»РµРЅРёСЏ */
     opacity: 0;
-    transform: translateY(-20px); /* Немного поднято вверх */
+    transform: translateY(-20px); /* РќРµРјРЅРѕРіРѕ РїРѕРґРЅРёРјРµС‚ РІРІРµСЂС… */
     animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+
+.tabs-container { /* РЎС‚РёР»Рё РєРѕРЅС‚РµР№РЅРµСЂРѕРІ РґР»СЏ С‚Р°Р±РѕРІ */
+    display: flex;
+    justify-content: center;
+}
+
+    .tabs-container img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+    }
+
+.button-group {
+    display: flex;
+    gap: 10px; /* Р Р°СЃСЃС‚РѕСЏРЅРёРµ РјРµР¶РґСѓ РєРЅРѕРїРєР°РјРё */
+    justify-content: center; /* Р’С‹СЂР°РІРЅРёРІР°РЅРёРµ РєРЅРѕРїРѕРє РїРѕ С†РµРЅС‚СЂСѓ */
+    align-items: center; /* Р’С‹СЂР°РІРЅРёРІР°РЅРёРµ РєРЅРѕРїРѕРє РїРѕ РІС‹СЃРѕС‚Рµ СЃ С‚РµРєСЃС‚РѕРј */
+}
+
+.contact-container {
+    display: flex;
+    align-items: center; /* Р’С‹СЂР°РІРЅРёРІР°РЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РІРЅСѓС‚СЂРё РєРѕРЅС‚РµР№РЅРµСЂР° */
+    gap: 20px; /* Р Р°СЃСЃС‚РѕСЏРЅРёРµ РјРµР¶РґСѓ С‚РµРєСЃС‚РѕРј Рё РєРЅРѕРїРєР°РјРё */
 }
 
 .bio-section {
