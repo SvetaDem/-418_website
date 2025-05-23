@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -9,8 +8,12 @@ h1, h2, h3, h4, h5, h6, p, a, span, div, button {
     font-family: 'Bookman Old Style' !important; /*Embrima !important;*/
 }
 
+a {
+    font-size: 17px;
+}
+
 p, button {
-    font-size: 17px; /* Или любой другой размер */
+    font-size: 17px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -279,7 +282,7 @@ input[type="checkbox"].input-validation-error {
 .error {
     color: red;
 }
-=======
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -584,4 +587,68 @@ input[type="checkbox"].input-validation-error {
     align-items: center; /* Р’С‹СЂР°РІРЅРёРІР°РЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РІРЅСѓС‚СЂРё РєРѕРЅС‚РµР№РЅРµСЂР° */
     gap: 20px; /* Р Р°СЃСЃС‚РѕСЏРЅРёРµ РјРµР¶РґСѓ С‚РµРєСЃС‚РѕРј Рё РєРЅРѕРїРєР°РјРё */
 }
->>>>>>> 25576edaf4957ff55134113b1430e7de7db4ac6a
+
+#userForm {
+    align-content: center;
+}
+
+/* Стили для полей ввода и textarea */
+#userForm input[type="text"],
+#userForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #0072ff;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Bookman Old Style', serif;
+    box-sizing: border-box;
+}
+
+/* Стили для кнопки "Add" */
+#userForm input[type="submit"] {
+    background-color: #0099ff;
+    width: 150px;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none; /* без подчеркиваний, надчёркиваний и т.д. */
+    border-radius: 5px;
+    font-family: 'Bookman Old Style' !important;
+    font-size: 17px;
+    border: none;
+}
+
+/* Наведение на кнопку */
+#userForm input[type="submit"]:hover {
+    background-color: #0072ff;
+    text-decoration: none;
+    color: #ffeb3b; /* желтый  текст при наведении */
+}
+
+#userForm {
+    text-align: center;
+}
+
+.navbar-nav li.active > a {
+    color: yellow !important;
+    background-color: #0056b3 !important;
+}
+
+.user-entry {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+
+.h4-form {
+    border-bottom: 2px black solid;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.table-form {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 25px;
+}

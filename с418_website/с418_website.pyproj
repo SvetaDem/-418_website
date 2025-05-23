@@ -29,6 +29,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="active_users_form.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app.py" />
     <Compile Include="routes.py" />
   </ItemGroup>
@@ -77,7 +80,7 @@
     <Content Include="static\images\SYOSD_soundtrack.jpg" />
     <Content Include="static\images\vibe.jpg" />
     <Content Include="views\about.tpl" />
-    <Content Include="views\activeUsers.tpl" />
+    <Content Include="views\active_users.tpl" />
     <Content Include="views\biography.tpl" />
     <Content Include="views\contact.tpl" />
     <Content Include="views\index.tpl" />
