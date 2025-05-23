@@ -3,23 +3,22 @@
 <div class="contact-container">
     <div class="contact-info">
         <h3>Active Users</h3>
-        <h4>Want to add a new user?</h4>
-        <a href="#userForm">Go straight to the add form &rarr;</a>
-    </div>
-</div>
-
-<div class="contact-container">
-    <div class="contact-info">
+        <div class="skip-block">
+            <h4>Want to add a new user?</h4>
+            <a href="#userForm">Go straight to the add form &rarr;</a>
+        </div>
+        <h4>User List</h4>
         % if users:
-            % for user in users:
-                <div class="user-entry">
-                    <p><strong>{{ user.username }}</strong></p>
-                    <p>{{ user.description }}</p>
-                    <p>Birthday: {{ user.birthday }}</p>
-                    <p>Phone: {{ user.telephone }}</p>
-                    <p><em>Added: {{ user.add_date }}</em></p>
-                    <hr>
-                </div>
+            % for username, info in users.items():
+            <div class="user-entry">
+                <p><strong>{{ username }}</strong></p>
+                <p>{{ info["description"] }}</p>
+                <ul>
+                    <li>Birthday: {{ info["birthday"] }}</li>
+                    <li>Phone: {{ info["telephone"] }}</li>
+                    <li>Added: {{ info["add_date"] }}</li>
+                </ul>
+            </div>
             % end
         % else:
             <p><em>No active users found.</em></p>

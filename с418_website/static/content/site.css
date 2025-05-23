@@ -635,10 +635,11 @@ input[type="checkbox"].input-validation-error {
 }
 
 .user-entry {
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #f2f2f2;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 15px;
     border-radius: 5px;
+    border: 2px #0072ff solid
 }
 
 .h4-form {
@@ -651,4 +652,11 @@ input[type="checkbox"].input-validation-error {
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 25px;
+}
+
+.skip-block {
+    margin: 20px 0 40px 0;
+    border-left: 2px #0072ff solid;
+    padding: 10px;
+    background: linear-gradient(to right, white, transparent);
 }
