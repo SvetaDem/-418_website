@@ -1,4 +1,4 @@
-% rebase('layout.tpl', title='C418 Songs', year=2023)
+% rebase('layout.tpl', title=title, year=year)
 
 <div class="contact-container">
     <div class="contact-info">
@@ -15,6 +15,7 @@
             <div class="song-details">
                 <h3>148</h3>
                 <p><strong>Genres:</strong> DnB, Electronica, Minecraft</p>
+                <a href="/music_tabs?song=148&image=/static/images/148_soundtrack.jpg&tab=/static/images/tabs/148_tab.png&genres=DnB,Electronica,Minecraft" class="btn-custom">Tabs</a>
             </div>
         </div>
 
@@ -24,6 +25,7 @@
             <div class="song-details">
                 <h3>Minecraft - Volume Beta</h3>
                 <p><strong>Genres:</strong> Ambient, Minecraft, Orchestral, Soundtrack</p>
+                <a href="/music_tabs?song=Minecraft - Volume Beta&image=/static/images/MinecraftVolumeBeta.jpg&tab=/static/images/tabs/vol_beta_tab.png&genres=Ambient, Minecraft, Orchestral, Soundtrack" class="btn-custom">Tabs</a>
             </div>
         </div>
 
@@ -33,6 +35,7 @@
             <div class="song-details">
                 <h3>One</h3>
                 <p><strong>Genres:</strong> Ambient, Minecraft, Orchestral, Soundtrack</p>
+                <a href="/music_tabs?song=One&image=/static/images/one_soundtrack.png&tab=/static/images/tabs/one_tab.png&genres=Ambient, Minecraft, Orchestral, Soundtrack" class="btn-custom">Tabs</a>
             </div>
         </div>
 
@@ -42,6 +45,7 @@
             <div class="song-details">
                 <h3>Seven Years of Server Data</h3>
                 <p><strong>Genres:</strong> Ambient, Breakbeat, Electronica, Free, House, Minecraft</p>
+                <a href="/music_tabs?song=Seven Years of Server Data&image=/static/images/SYOSD_soundtrack.jpg&tab=/static/images/tabs/sev_year_tab.png&genres=Ambient, Breakbeat, Electronica, Free, House, Minecraft" class="btn-custom">Tabs</a>
             </div>
         </div>
 
@@ -51,6 +55,7 @@
             <div class="song-details">
                 <h3>Minecraft - Volume Alpha</h3>
                 <p><strong>Genres:</strong> Ambient, Minecraft, Soundtrack</p>
+                <a href="/music_tabs?song=Minecraft - Volume Alpha&image=/static/images/officialMinecraftSoundtrack.jpg&tab=/static/images/tabs/vol_alph_tab.png&genres=Ambient, Minecraft, Soundtrack" class="btn-custom">Tabs</a>
             </div>
         </div>
 
@@ -60,6 +65,7 @@
             <div class="song-details">
                 <h3>Life Changing Moments Seem Minor in Pictures</h3>
                 <p><strong>Genres:</strong> Ambient, Experimental, Electronica</p>
+                <a href="/music_tabs?song=Life Changing Moments Seem Minor in Pictures&image=/static/images/LCMSMIP_soudtrack.jpg&tab=/static/images/tabs/life_tab.png&genres=Ambient, Experimental, Electronica" class="btn-custom">Tabs</a>
             </div>
         </div>
     </div>
