@@ -42,7 +42,7 @@ def active_users_post():
             error = "The date should be in the format dd.mm.yyyy."
 
         # Проверка имени — минимум 2 буквы
-        if len(re.findall(r'[A-Za-zА-Яа-я]', username)) < 2:
+        if len(re.findall(r'[A-Za-z]', username)) < 2:
             error = "The username must contain at least 2 letters."
 
         # Проверка формата даты

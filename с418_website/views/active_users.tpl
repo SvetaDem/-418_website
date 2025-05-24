@@ -75,8 +75,13 @@ document.getElementById("userForm").addEventListener("submit", function(e) {
         if (res.error) {
             errorMsg.textContent = res.error;
         } else {
-            alert("User was successfully added!");
-            location.reload(); // перезагружаем страницу
+            alert("User was successfully added!");            
+            document.getElementById("username").value = "";
+            document.getElementById("description").value = "";
+            document.getElementById("date").value = "";
+            document.getElementById("telephone").value = "";
+            errorMsg.textContent = ""
+            //location.reload(); // перезагрузка страницы
         }
     })
     .catch(err => {
