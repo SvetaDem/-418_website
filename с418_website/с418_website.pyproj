@@ -19,6 +19,9 @@
     <Name>с418_website</Name>
     <RootNamespace>с418_website</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>unittest</TestFramework>
+    <UnitTestPattern>test*.py</UnitTestPattern>
+    <UnitTestRootDirectory>.</UnitTestRootDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,6 +37,9 @@
     </Compile>
     <Compile Include="app.py" />
     <Compile Include="routes.py" />
+    <Compile Include="test_valid_phone.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="valid_phone.py">
       <SubType>Code</SubType>
     </Compile>
