@@ -4,6 +4,7 @@ Routes and views for the bottle application.
 
 from bottle import route, view, template
 from datetime import datetime
+from articles_app import get_articles_data, handle_article_submission
 
 
 @route('/')
@@ -55,6 +56,26 @@ def biography():
         year=datetime.now().year
     )
 
+@route('/articles')
+@view('articles')
+def articles():
+    """Renders the articles page."""
+    # Get articles, errors, and form data from articles_app
+    articles, errors, form_data = get_articles_data()
+    return dict(
+        title='Useful Articles about C418',
+        message='Read and share articles about composer C418.',
+        year=datetime.now().year,
+        articles=articles,
+        errors=errors,
+        form_data=form_data
+    )
+
+@route('/add_article', method='POST')
+def add_article():
+    """Handles article submission."""
+    handle_article_submission()
+
 @route('/music_tabs')
 @view('music_tabs')
 def music_tab():
@@ -64,3 +85,4 @@ def music_tab():
         message='Tabs for selected music by the C418.',
         year=datetime.now().year
     )
+

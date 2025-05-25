@@ -37,6 +37,10 @@
                     <input type="text" id="date" name="date" value="{{form_data['date']}}" required>
                 </p>
                 <p>
+                    <label for="link">Link:</label><br>
+                    <input type="text" id="link" name="link" value="{{form_data['link']}}" required>
+                </p>
+                <p>
                     <button type="submit" class="btn-custom">Add Article</button>
                 </p>
             </form>
@@ -57,6 +61,7 @@
                     <h3>{{article['title']}}</h3>
                     <p><strong>Author:</strong> {{article['author']}}</p>
                     <p><strong>Date:</strong> {{article['date']}}</p>
+                    <p><strong>Link:</strong> <a href="{{article['link']}}" target="_blank">{{article['link']}}</a></p>
                     <p class="quote">{{article['text']}}</p>
                 </div>
             </div>
