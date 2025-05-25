@@ -8,6 +8,9 @@ from urllib.parse import quote
 # Файл для хранения статей
 ARTICLES_FILE = 'articles.json'
 
+# Список нецензурных слов для проверки
+PROFANITY_LIST = ["damn", "hell", "shit", "fuck"]
+
 # Инициализация файла articles.json, если он не существует
 def init_articles_file():
     if not os.path.exists(ARTICLES_FILE):
@@ -65,6 +68,14 @@ def is_valid_text(text):
     html_pattern = r'<(script|style|iframe|object|embed|form|input|button|textarea)\b'
     return not bool(re.search(html_pattern, text, re.IGNORECASE))
 
+# Проверка на наличие нецензурных слов
+def contains_profanity(text):
+    text_lower = text.lower()
+    for word in PROFANITY_LIST:
+        if word in text_lower:
+            return True
+    return False
+
 # Получение данных для страницы статей
 def get_articles_data():
     articles = load_articles()
@@ -97,18 +108,24 @@ def handle_article_submission():
         errors.append("Author is required.")
     elif not is_valid_author(author):
         errors.append("Author must be 3-50 characters (letters, digits, spaces, hyphens, underscores).")
+    elif contains_profanity(author):
+        errors.append("Author contains inappropriate language.")
 
     # Валидация заголовка
     if not title:
         errors.append("Title is required.")
     elif not is_valid_title(title):
         errors.append("Title must be 5-100 characters (letters, digits, spaces, hyphens, punctuation).")
+    elif contains_profanity(title):
+        errors.append("Title contains inappropriate language.")
 
     # Валидация текста
     if not text:
         errors.append("Text is required.")
     elif not is_valid_text(text):
         errors.append("Text must be 10-1000 characters and contain no HTML tags.")
+    elif contains_profanity(text):
+        errors.append("Text contains inappropriate language.")
 
     # Валидация даты
     if not date:
