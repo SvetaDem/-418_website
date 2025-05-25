@@ -3,7 +3,7 @@ from datetime import datetime
 import re
 import os
 from bottle import request, response
-from urllib.parse import quote
+from urllib.parse import quote, unquote
 
 # Файл для хранения статей
 ARTICLES_FILE = 'articles.json'
@@ -51,22 +51,37 @@ def is_valid_url(url):
     pattern = r'^(https?://)([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(/[\w\-./?%&=~:]*)*$'
     return bool(re.match(pattern, url))
 
-# Проверка автора (3-50 символов, буквы, цифры, пробелы, дефисы, подчёркивания)
+# Проверка автора (3-50 символов, только латиница, цифры, пробелы, дефисы, подчёркивания)
 def is_valid_author(author):
-    pattern = r'^[\w\s-]{3,50}$'
-    return bool(re.match(pattern, author))
+    pattern = r'^[a-zA-Z0-9\s-]{3,50}$'
+    if not re.match(pattern, author):
+        return False
+    # Проверка на отсутствие кириллицы
+    if re.search(r'[\u0400-\u04FF]', author):
+        return False
+    return True
 
-# Проверка заголовка (5-100 символов, буквы, цифры, пробелы, дефисы, пунктуация)
+# Проверка заголовка (5-100 символов, только латиница, цифры, пробелы, дефисы, пунктуация)
 def is_valid_title(title):
-    pattern = r'^[\w\s\-.,!?]{5,100}$'
-    return bool(re.match(pattern, title))
+    pattern = r'^[a-zA-Z0-9\s\-.,!?]{5,100}$'
+    if not re.match(pattern, title):
+        return False
+    # Проверка на отсутствие кириллицы
+    if re.search(r'[\u0400-\u04FF]', title):
+        return False
+    return True
 
-# Проверка текста (10-1000 символов, без HTML-тегов)
+# Проверка текста (10-1000 символов, без HTML-тегов, без кириллицы)
 def is_valid_text(text):
     if len(text) < 10 or len(text) > 1000:
         return False
     html_pattern = r'<(script|style|iframe|object|embed|form|input|button|textarea)\b'
-    return not bool(re.search(html_pattern, text, re.IGNORECASE))
+    if re.search(html_pattern, text, re.IGNORECASE):
+        return False
+    # Проверка на отсутствие кириллицы
+    if re.search(r'[\u0400-\u04FF]', text):
+        return False
+    return True
 
 # Проверка на наличие нецензурных слов
 def contains_profanity(text):
@@ -84,30 +99,30 @@ def get_articles_data():
         articles.sort(key=lambda x: datetime.strptime(x['date'], '%d.%m.%Y'), reverse=True)
     except (KeyError, ValueError):
         print("Warning: Skipping sorting due to invalid date format")
-    errors = request.query.get('errors', '').split('|') if request.query.get('errors') else []
+    errors = request.query.getunicode('errors', '').split('|') if request.query.getunicode('errors') else []
     form_data = {
-        'author': request.query.get('author', ''),
-        'title': request.query.get('title', ''),
-        'text': request.query.get('text', ''),
-        'date': request.query.get('date', ''),
-        'link': request.query.get('link', '')
+        'author': unquote(request.query.getunicode('author', '')),
+        'title': unquote(request.query.getunicode('title', '')),
+        'text': unquote(request.query.getunicode('text', '')),
+        'date': unquote(request.query.getunicode('date', '')),
+        'link': unquote(request.query.getunicode('link', ''))
     }
     return articles, errors, form_data
 
 # Обработка отправки формы
 def handle_article_submission():
-    author = request.forms.get('author', '').strip()
-    title = request.forms.get('title', '').strip()
-    text = request.forms.get('text', '').strip()
-    date = request.forms.get('date', '').strip()
-    link = request.forms.get('link', '').strip()
+    author = request.forms.getunicode('author', '').strip()
+    title = request.forms.getunicode('title', '').strip()
+    text = request.forms.getunicode('text', '').strip()
+    date = request.forms.getunicode('date', '').strip()
+    link = request.forms.getunicode('link', '').strip()
 
     errors = []
     # Валидация автора
     if not author:
         errors.append("Author is required.")
     elif not is_valid_author(author):
-        errors.append("Author must be 3-50 characters (letters, digits, spaces, hyphens, underscores).")
+        errors.append("Author must be 3-50 characters (letters, digits, spaces, hyphens, underscores, English only).")
     elif contains_profanity(author):
         errors.append("Author contains inappropriate language.")
 
@@ -115,7 +130,7 @@ def handle_article_submission():
     if not title:
         errors.append("Title is required.")
     elif not is_valid_title(title):
-        errors.append("Title must be 5-100 characters (letters, digits, spaces, hyphens, punctuation).")
+        errors.append("Title must be 5-100 characters (letters, digits, spaces, hyphens, punctuation, English only).")
     elif contains_profanity(title):
         errors.append("Title contains inappropriate language.")
 
@@ -123,7 +138,7 @@ def handle_article_submission():
     if not text:
         errors.append("Text is required.")
     elif not is_valid_text(text):
-        errors.append("Text must be 10-1000 characters and contain no HTML tags.")
+        errors.append("Text must be 10-1000 characters, contain no HTML tags, and use English characters only.")
     elif contains_profanity(text):
         errors.append("Text contains inappropriate language.")
 
@@ -148,12 +163,12 @@ def handle_article_submission():
 
     if errors:
         # Редирект с ошибками и сохранением данных формы
-        error_str = quote('|'.join(errors))
-        author = quote(author)
-        title = quote(title)
-        text = quote(text)
-        date = quote(date)
-        link = quote(link)
+        error_str = quote('|'.join(errors), safe='')
+        author = quote(author, safe='')
+        title = quote(title, safe='')
+        text = quote(text, safe='')
+        date = quote(date, safe='')
+        link = quote(link, safe='')
         print(f"Redirecting with errors: {errors}")
         response.status = 302
         response.set_header('Location', f'/articles?errors={error_str}&author={author}&title={title}&text={text}&date={date}&link={link}')
@@ -172,12 +187,12 @@ def handle_article_submission():
         print("Article saved successfully")
     except ValueError as e:
         errors.append(str(e))
-        error_str = quote('|'.join(errors))
-        author = quote(author)
-        title = quote(title)
-        text = quote(text)
-        date = quote(date)
-        link = quote(link)
+        error_str = quote('|'.join(errors), safe='')
+        author = quote(author, safe='')
+        title = quote(title, safe='')
+        text = quote(text, safe='')
+        date = quote(date, safe='')
+        link = quote(link, safe='')
         print(f"Error saving article: {str(e)}")
         response.status = 302
         response.set_header('Location', f'/articles?errors={error_str}&author={author}&title={title}&text={text}&date={date}&link={link}')
