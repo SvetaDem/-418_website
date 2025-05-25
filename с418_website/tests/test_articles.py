@@ -99,5 +99,8 @@ class TestDateValidation(unittest.TestCase):
                 result = is_valid_date(case['date_str'])
                 self.assertEqual(result, case['expected'], f"Failed for {case['date_str']}")
 
-if __name__ == '__main__':
-    unittest.main(verbosity=3)
+if name == 'main':
+    loader = unittest.TestLoader()
+    suite = loader.discover('tests', pattern='test*.py')
+    runner = unittest.TextTestRunner(verbosity=3)
+    runner.run(suite)
