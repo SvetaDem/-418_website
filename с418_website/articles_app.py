@@ -121,6 +121,13 @@ def handle_article_submission():
         errors.append("Link is required.")
     elif not is_valid_url(link):
         errors.append("Link must be a valid URL (e.g., https://example.com).")
+    else:
+        # Проверка на дублирование ссылки
+        articles = load_articles()
+        for article in articles:
+            if article.get('link') == link:
+                errors.append("This link has already been used for another article.")
+                break
 
     if errors:
         # Редирект с ошибками и сохранением данных формы
@@ -136,15 +143,13 @@ def handle_article_submission():
         return
 
     # Добавление новой статьи
-    articles = load_articles()
-    article = {
+    articles.append({
         'author': author,
         'title': title,
         'text': text,
         'date': date,
         'link': link
-    }
-    articles.append(article)
+    })
     try:
         save_articles(articles)
         print("Article saved successfully")
