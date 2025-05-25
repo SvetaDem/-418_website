@@ -105,13 +105,14 @@ def partners():
     if request.method == 'POST':
         errors, form_data = handle_partner_submission()
     else:
-        errors, form_data = [], {"name": "", "description": "", "phone": "", "date": ""}
+        errors, form_data = [], {"name": "", "description": "", "phone": "", "date": "", "email": ""}
     partners, _, _ = get_partners_data()
     return dict(
         title='Partners',
-        message='Our partner companies.',
+        message='Our partner companies',
         year=datetime.now().year,
         partners=partners,
         errors=errors,
-        form_data=form_data
+        form_data=form_data,
+        request=request
     )

@@ -47,6 +47,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="routes.py" />
+    <Compile Include="tests\test_validation_partner.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tests\test_articles.py">
       <SubType>Code</SubType>
     </Compile>
