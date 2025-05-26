@@ -103,16 +103,19 @@ def active_users():
 def partners():
     """Renders the partners page."""
     if request.method == 'POST':
-        errors, form_data = handle_partner_submission()
+        errors, form_data, success_message = handle_partner_submission()
     else:
-        errors, form_data = [], {"name": "", "description": "", "phone": "", "date": "", "email": ""}
-    partners, _, _ = get_partners_data()
-    return dict(
+        errors, form_data, success_message = [], {"name": "", "description": "", "phone": "", "email": "", "date": ""}, ""
+
+    partners, _, _, total_partners, no_partners = get_partners_data()
+    return context(
         title='Partners',
-        message='Our partner companies',
+        message='Our partner companies.',
         year=datetime.now().year,
         partners=partners,
         errors=errors,
         form_data=form_data,
-        request=request
+        total_partners=total_partners,
+        no_partners=no_partners,
+        success_message=success_message
     )

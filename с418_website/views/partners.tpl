@@ -8,32 +8,33 @@
             <a href="#partnerForm">Go straight to the add form?</a>
         </div>
 
-        <h4>Total Partners:{{ len(partners) if partners else 0 }}</h4>
+        <h4>Total Partners: {{ total_partners }}</h4>
 
         <h4>Partner Companies</h4>
-        % if not partners:
-            <p><em>No partners yet.</em></p>
-        % else:
-            % for partner in partners:
-                <div class="user-entry">
-                    <p><strong>{{ partner['name'] }}</strong></p>
-                    <p>{{ partner['description'] }}</p>
-                    <ul>
-                        <li>Phone: {{ partner['phone'] }}</li>
-                        <li>Collaboration Date: {{ partner['date'] }}</li>
-                    </ul>
-                </div>
+        <div id="partnersList">
+            % if no_partners:
+                <p><em>No partners yet.</em></p>
+            % else:
+                % for partner in partners:
+                    <div class="user-entry">
+                        <p><strong>{{ partner['name'] }}</strong></p>
+                        <p>{{ partner['description'] }}</p>
+                        <ul>
+                            <li>Phone: {{ partner['phone'] }}</li>
+                            <li>Collaboration Date: {{ partner['date'] }}</li>
+                        </ul>
+                    </div>
+                % end
             % end
-        % end
+        </div>
     </div>
 </div>
-
 
 <div class="contact-container">
     <div class="contact-info move">
         <h4 class="h4-form">Add Partner Form</h4>
         <!-- Print errors -->
-        <p id="formError" class="form-error"></p>
+        <p id="formError" class="form-error">{{ success_message }}</p>
         <form id="partnerForm" method="post" action="/partners">
             <table class="table-form">
                 <tr>
@@ -61,21 +62,12 @@
         </form>
 
         <!-- Errors -->
-        % if errors:
-            <div class="validation-summary-errors">
-                <ul>
-                    % for error in errors:
-                        <li>{{ error }}</li>
-                    % end
-                </ul>
-            </div>
-        % end
-
-        <!-- Success -->
-        % if not errors and request.method == 'POST':
-            <div class="success-message">
-                <p>Partner added successfully!</p>
-            </div>
-        % end
+        <div class="validation-summary-errors">
+            <ul>
+                % for error in errors:
+                    <li>{{ error }}</li>
+                % end
+            </ul>
+        </div>
     </div>
 </div>

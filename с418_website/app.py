@@ -6,6 +6,7 @@ import bottle
 import os
 import sys
 import forms.active_users_form
+import partners_form
 
 # routes contains the HTTP handlers for our server and must be imported.
 import routes
