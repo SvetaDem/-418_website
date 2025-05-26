@@ -522,6 +522,7 @@ input[type="checkbox"].input-validation-error {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
+    border-color: #0072ff;
     background-color: #f9f9f9;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* РґРѕР±Р°РІР»СЏРµС‚ СЌС„С„РµРєС‚ РїСЂРё РЅР°РІРµРґРµРЅРёРё */
 }
@@ -678,4 +679,18 @@ input[type="checkbox"].input-validation-error {
     margin-bottom: 15px;
     transition: opacity 0.3s ease;
     text-align:center;
+}
+
+
+/* Новый класс error для страницы партнёров */
+.error {
+    color: #b94a48; /* Красный цвет, как в validation-summary-errors */
+    background-color: rgba(185, 74, 72, 0.1); /* Полупрозрачный фон для выделения */
+    padding: 10px 15px;
+    border: 1px solid #b94a48;
+    border-radius: 5px;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
 }

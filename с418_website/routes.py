@@ -110,8 +110,7 @@ def partners():
     partners, _, _, total_partners, no_partners = get_partners_data()
     return context(
         title='Partners',
-        message='Our partner companies.',
-        year=datetime.now().year,
+        message='Our partner companies',
         partners=partners,
         errors=errors,
         form_data=form_data,
