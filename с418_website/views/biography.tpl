@@ -1,19 +1,5 @@
 % rebase('layout.tpl', title='Biography of C418')
 
-<style>
-    body {
-        background: white;
-    }
-    .bio-section {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        margin: 20px auto;
-        max-width: 800px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    }
-</style>
-
 <div class="container body-content">
      <div class="bio-section">
          <h1 style="color: #0066ff; font-weight: bold; border-bottom: 3px solid #0066ff; padding-bottom: 5px;">Biography of C418</h1>
