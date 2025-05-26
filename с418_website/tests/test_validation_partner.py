@@ -127,8 +127,8 @@ class TestValidation(unittest.TestCase):
 
         valid_descriptions = [
             "A music production company.",  # Short but valid
-            "Collaborates with C418 to produce Minecraft soundtracks and events.",  # Realistic description
-            "Specializes in audio engineering and music distribution for gaming industries."  # Another realistic example
+            "Collaborates with C418 to produce Minecraft soundtracks and events.",  
+            "Specializes in audio engineering and music distribution for gaming industries."  
         ]
         for desc in valid_descriptions:
             with self.subTest(desc=desc):
