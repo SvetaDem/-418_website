@@ -18,6 +18,10 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>с418_website</Name>
     <RootNamespace>с418_website</RootNamespace>
+    <InterpreterId>MSBuild|env2|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>unittest</TestFramework>
+    <UnitTestPattern>test*.py</UnitTestPattern>
+    <UnitTestRootDirectory>./tests</UnitTestRootDirectory>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
     <TestFramework>unittest</TestFramework>
     <UnitTestPattern>test*.py</UnitTestPattern>
@@ -36,6 +40,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app.py" />
+    <Compile Include="articles_app.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="routes.py" />
+    <Compile Include="tests\test_articles.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\__init__.py">
     <Compile Include="forms\__init__.py">
       <SubType>Code</SubType>
     </Compile>
@@ -51,6 +63,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="tests\" />
     <Folder Include="forms\" />
     <Folder Include="static\" />
     <Folder Include="static\content\" />
@@ -62,6 +75,7 @@
     <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="articles.json" />
     <Content Include="requirements.txt" />
     <Content Include="static\content\bootstrap.css" />
     <Content Include="static\content\bootstrap.min.css" />
@@ -100,6 +114,7 @@
     <Content Include="static\images\SYOSD_soundtrack.jpg" />
     <Content Include="static\images\vibe.jpg" />
     <Content Include="views\about.tpl" />
+    <Content Include="views\articles.tpl" />
     <Content Include="views\active_users.tpl" />
     <Content Include="views\biography.tpl" />
     <Content Include="views\contact.tpl" />

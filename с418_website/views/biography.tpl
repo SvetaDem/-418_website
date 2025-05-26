@@ -2,7 +2,7 @@
 
 <div class="container body-content">
      <div class="bio-section">
-         <h1>Biography of C418</h1>
+         <h1 style="color: #0066ff; font-weight: bold; border-bottom: 3px solid #0066ff; padding-bottom: 5px;">Biography of C418</h1>
      </div>
 
      <div class="bio-section center-blocks"> 
