@@ -1,20 +1,14 @@
 {
-  "sveta_dem0": {
-    "description": "fghf",
+  "sveta": {
+    "description": "a r t i s t",
     "birthday": "25.08.2006",
     "telephone": "+7(996)773-75-42",
-    "add_date": "24.05.2025 09:50:10"
+    "add_date": "26.05.2025 10:42:11"
   },
-  "sveta_dem06": {
-    "description": "gfh",
-    "birthday": "25.08.2006",
-    "telephone": "+7(996)773-75-42",
-    "add_date": "24.05.2025 09:46:15"
-  },
-  "vv": {
-    "description": "vvv",
-    "birthday": "25.08.1900",
-    "telephone": "+7(999)175-00-00",
-    "add_date": "26.05.2025 09:47:43"
+  "stanislav": {
+    "description": "p i a n o",
+    "birthday": "13.01.2006",
+    "telephone": "+7(981)997-13-01",
+    "add_date": "26.05.2025 10:46:00"
   }
 }

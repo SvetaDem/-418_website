@@ -654,8 +654,14 @@ input[type="checkbox"].input-validation-error {
 
 .table-form {
     border-collapse: collapse;
-    width: 100%;
+    width: 80%;
     margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-form td:first-child {
+    text-align: left;
 }
 
 .skip-block {
