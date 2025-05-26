@@ -4,7 +4,7 @@ Routes and views for the bottle application.
 
 from bottle import route, view, template, request
 from datetime import datetime
-from active_users_form import load_users
+from forms.active_users_form import load_users
 
 def context(**kwargs):
     return dict(year=datetime.now().year, request=request, **kwargs)

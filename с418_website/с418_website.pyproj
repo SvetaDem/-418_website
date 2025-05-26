@@ -21,7 +21,7 @@
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
     <TestFramework>unittest</TestFramework>
     <UnitTestPattern>test*.py</UnitTestPattern>
-    <UnitTestRootDirectory>.</UnitTestRootDirectory>
+    <UnitTestRootDirectory>.\tests</UnitTestRootDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,25 +32,33 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="active_users_form.py">
+    <Compile Include="forms\active_users_form.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app.py" />
-    <Compile Include="routes.py" />
-    <Compile Include="test_valid_phone.py">
+    <Compile Include="forms\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="valid_phone.py">
+    <Compile Include="routes.py" />
+    <Compile Include="tests\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\test_valid_phone.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="forms\valid_phone.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="forms\" />
     <Folder Include="static\" />
     <Folder Include="static\content\" />
     <Folder Include="static\fonts\" />
     <Folder Include="static\images\tabs\" />
     <Folder Include="static\scripts\" />
     <Folder Include="static\images\" />
+    <Folder Include="tests\" />
     <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 from bottle import route, run, request, response, template
 import json
 from datetime import datetime
-from valid_phone import is_valid_phone
+from forms.valid_phone import is_valid_phone
 import re
 
 # Файл, в котором хранятся данные пользователей
@@ -44,12 +44,14 @@ def active_users_post():
     # Проверка: все поля должны быть заполнены
     if not username or not description or not date or not phone:
         error = "All fields are required."
-    # Проверка имени: минимум 2 буквы
-    elif len(re.findall(r'[A-Za-z]', username)) < 2:
-        error = "The username must contain at least 2 latin letters."
+    # Проверка имени: начинается с буквы и содержит минимум 2 буквы
+    elif not re.fullmatch(r'[A-Za-z][^./\\|,)(]{1,}', username):
+        error = "The username must begin with a letter, contain at least 2 characters, and not include . / \\ | , ) ("
+
     # Проверка описания: минимум 3 буквы
     elif len(re.findall(r'[A-Za-z]', description)) < 3:
-        error = "The description must contain at least 3 latin letters."   
+        error = "The description must contain at least 3 latin letters." 
+   
     else:
         try:
             # Проверка формата даты рождения

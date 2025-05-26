@@ -1,5 +1,5 @@
 import unittest
-from valid_phone import is_valid_phone
+from forms.valid_phone import is_valid_phone
 
 class Test_valid_phone(unittest.TestCase):
     # Проверка невалидных номеров
