@@ -17,7 +17,7 @@
 
         <h4>Partner Companies</h4>
         <div class="song-list">
-            % if no_partners:
+            % if total_partners == 0:
                 <p><em>No partners yet.</em></p>
             % else:
                 % for partner in partners:

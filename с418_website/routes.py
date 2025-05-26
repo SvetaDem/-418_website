@@ -107,7 +107,7 @@ def partners():
     else:
         errors, form_data, success_message = [], {"name": "", "description": "", "phone": "", "email": "", "date": ""}, ""
 
-    partners, _, _, total_partners, no_partners = get_partners_data()
+    partners, _, _, total_partners = get_partners_data()
     return context(
         title='Partners',
         message='Our partner companies',
@@ -115,6 +115,5 @@ def partners():
         errors=errors,
         form_data=form_data,
         total_partners=total_partners,
-        no_partners=no_partners,
         success_message=success_message
     )

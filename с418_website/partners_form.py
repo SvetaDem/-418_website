@@ -73,8 +73,7 @@ def get_partners_data():
     form_data = {"name": "", "description": "", "phone": "", "email": "", "date": ""}
     partners = load_partners()["partners"]
     total_partners = len(partners) if partners else 0
-    no_partners = not partners  # True if no partners
-    return partners, errors, form_data, total_partners, no_partners
+    return partners, errors, form_data, total_partners
 
 def handle_partner_submission():
     """Handles partner form submission and returns context variables."""
@@ -92,11 +91,9 @@ def handle_partner_submission():
     if not form_data["name"]:
         errors.append("Company name is required")
     else:
-        # Check length of name
         is_valid_name, name_error = validate_name(form_data["name"])
         if not is_valid_name:
             errors.append(name_error)
-        # Check for duplicate partner by name
         partners = load_partners()["partners"]
         if any(partner["name"].lower() == form_data["name"].lower() for partner in partners):
             errors.append("A partner with this name already exists")
@@ -104,7 +101,6 @@ def handle_partner_submission():
     if not form_data["description"]:
         errors.append("Description is required")
     else:
-        # Check length of description
         is_valid_desc, desc_error = validate_description(form_data["description"])
         if not is_valid_desc:
             errors.append(desc_error)
