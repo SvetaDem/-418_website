@@ -2,7 +2,7 @@ import unittest
 from valid_phone import is_valid_phone
 
 class Test_valid_phone(unittest.TestCase):
-    
+    # Проверка невалидных номеров
     def test_invalid_phones(self):
          list_phones_uncor = [
             "", # пустая строка
@@ -30,7 +30,8 @@ class Test_valid_phone(unittest.TestCase):
         ]
          for phone in list_phones_uncor:
              self.assertFalse(is_valid_phone(phone), f"Должен быть невалидный: {phone}")
-            
+
+    # Проверка валидных номеров        
     def test_valid_phones(self):
         list_phones_cor = [
             "+7(911)178-20-10",
