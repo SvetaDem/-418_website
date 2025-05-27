@@ -61,10 +61,9 @@ def articles():
     """Renders the articles page."""
     # Get articles, errors, and form data from articles_app
     articles, errors, form_data = get_articles_data()
-    return dict(
+    return context(
         title='Useful Articles about C418',
         message='Read and share articles about composer C418.',
-        year=datetime.now().year,
         articles=articles,
         errors=errors,
         form_data=form_data
