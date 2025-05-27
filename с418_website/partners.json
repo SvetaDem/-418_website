@@ -1,0 +1,16 @@
+{
+  "partners": [
+    {
+      "name": "SoundWave Studio",
+      "description": "Leading music production studio.",
+      "phone": "+1-987-654-3210",
+      "date": "2025-05-01"
+    },
+    {
+      "name": "MelodyWorks",
+      "description": "Innovative sound design company.",
+      "phone": "+1-456-789-1234",
+      "date": "2025-04-15"
+    }
+  ]
+}

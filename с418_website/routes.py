@@ -6,6 +6,8 @@ from bottle import route, view, template, request
 from datetime import datetime
 from articles_app import get_articles_data, handle_article_submission
 from forms.active_users_form import load_users
+from partners_form import get_partners_data, handle_partner_submission
+
 
 def context(**kwargs):
     return dict(year=datetime.now().year, request=request, **kwargs)
@@ -84,8 +86,6 @@ def music_tab():
         message='Tabs for selected music by the C418.',
         year=datetime.now().year
     )
-        message='Tabs for selected music by the C418.'
-    )
 
 @route('/active_users')
 @view('active_users')
@@ -96,4 +96,22 @@ def active_users():
         message='List of active users.',
         users=load_users(),
         error=None
+    )
+
+@route('/partners', method=['GET', 'POST'])
+@view('partners')
+def partners():
+    """Renders the partners page."""
+    if request.method == 'POST':
+        errors, form_data = handle_partner_submission()
+    else:
+        errors, form_data = [], {"name": "", "description": "", "phone": "", "date": ""}
+    partners, _, _ = get_partners_data()
+    return dict(
+        title='Partners',
+        message='Our partner companies.',
+        year=datetime.now().year,
+        partners=partners,
+        errors=errors,
+        form_data=form_data
     )
