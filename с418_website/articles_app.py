@@ -69,6 +69,23 @@ def has_minimum_words(text, min_words=3):
     # Проверяет, достаточно ли слов
     return len(words) >= min_words
 
+# Проверка на наличие осмысленных слов
+# Требует хотя бы одно слово длиной 4+ символа, исключая повторяющиеся буквы
+def has_meaningful_words(text):
+    # Разбивает текст на слова, игнорируя лишние пробелы
+    words = [word for word in text.split() if word]
+    # Проверяет каждое слово
+    for word in words:
+        # Слово должно быть длиной 4+ символа
+        if len(word) >= 4:
+            # Проверяет, что слово состоит только из букв
+            if re.match(r'^[a-zA-Z]+$', word):
+                # Исключает слова с повторяющимися символами (например, "aaaa")
+                if not has_repeated_chars(word):
+                    return True
+    # Если ни одно слово не соответствует, возвращает False
+    return False
+
 # Проверка на наличие эмодзи в строке
 # Предотвращает использование Unicode-символов эмодзи
 def contains_emoji(text):
@@ -122,14 +139,15 @@ def is_valid_date(date_str):
         return False
 
 # Проверка URL на валидность
-# Поддерживает http(s), домены, пути и параметры
+# Поддерживает http(s), домены, пути и параметры, включая апостроф
 def is_valid_url(url):
     # Паттерн для строгой проверки URL
+    # Позволяет использовать апостроф (') в пути и параметрах, например, https://example.com/path'with'apostrophe
     pattern = (
         r'^https?://'  # Требует http или https
         r'(?:[a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.'  # Поддомены и домен
         r'(?:[a-zA-Z]{2,63}|xn--[a-zA-Z0-9-]+)'  # Доменная зона или IDN
-        r'(?:/[\w\-./?%&=~:@!*\'();]*)*$'  # Путь и параметры
+        r'(?:/[\w\-./?%&=~:@!*\'();]*)*$'  # Путь и параметры, включая апостроф
     )
     # Проверяет формат URL
     if not re.match(pattern, url, re.IGNORECASE):
@@ -143,7 +161,8 @@ def is_valid_url(url):
 # Обеспечивает осмысленное имя автора
 def is_valid_author(author):
     # Паттерн: начинается с буквы, содержит латиницу, цифры, пробелы, дефисы, подчёркивания
-    pattern = r'^[a-zA-Z][a-zA-Z0-9\s-_]{1,48}[a-zA-Z0-9]$'
+    # Экранированный дефис (\-) предотвращает ошибку "bad character range"
+    pattern = r'^[a-zA-Z][a-zA-Z0-9\s\-_]{1,48}[a-zA-Z0-9]$'
     # Проверяет формат и длину
     if not re.match(pattern, author):
         return False
@@ -181,6 +200,9 @@ def is_valid_title(title):
     # Требует наличие хотя бы одного слова (2+ буквы)
     if not re.search(r'[a-zA-Z]{2,}', title):
         return False
+    # Требует наличие хотя бы одного осмысленного слова (4+ букв, без повторов)
+    if not has_meaningful_words(title):
+        return False
     return True
 
 # Проверка поля text (10-1000 символов, строгие правила)
@@ -211,8 +233,12 @@ def is_valid_text(text):
     # Требует минимум 3 слова
     if not has_minimum_words(text, min_words=3):
         return False
+    # Требует наличие хотя бы одного осмысленного слова (4+ букв, без повторов)
+    if not has_meaningful_words(text):
+        return False
     # Паттерн: только латиница, цифры, пробелы, допустимая пунктуация
     pattern = r'^[a-zA-Z0-9\s\-.,!?:;\'"()]+$'
+    # Проверяет формат и длину
     if not re.match(pattern, text):
         return False
     return True
@@ -285,7 +311,7 @@ def handle_article_submission():
         errors.append("Title is required.")
     # Проверяет формат, символы и другие ограничения
     elif not is_valid_title(title):
-        errors.append("Title must be 5-100 characters (letters, digits, spaces, hyphens, punctuation, English only, at least one word).")
+        errors.append("Title must be 5-100 characters (letters, digits, spaces, hyphens, punctuation, English only, at least one meaningful word).")
     # Проверяет наличие нецензурных слов
     elif contains_profanity(title):
         errors.append("Title contains inappropriate language.")
@@ -299,7 +325,7 @@ def handle_article_submission():
         errors.append("Text is required.")
     # Проверяет формат, символы и другие ограничения
     elif not is_valid_text(text):
-        errors.append("Text must be 10-1000 characters, no HTML tags, English only, at least 3 words, no emojis or control chars.")
+        errors.append("Text must be 10-1000 characters, no HTML tags, English only, at least 3 words including one meaningful word.")
     # Проверяет наличие нецензурных слов
     elif contains_profanity(text):
         errors.append("Text contains inappropriate language.")

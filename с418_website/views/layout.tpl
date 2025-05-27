@@ -21,11 +21,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="{{ 'active' if request.path == '/about' else '' }}"><a href="/about">About</a></li>
-                    <li class="{{ 'active' if request.path == '/contact' else '' }}"><a href="/contact">Contact</a></li>
-                    <li class="{{ 'active' if request.path == '/songs' else '' }}"><a href="/songs">C418 Songs</a></li>
-                    <li class="{{ 'active' if request.path == '/biography' else '' }}"><a href="/biography">Biography</a></li>
-                    <li class="{{ 'active' if request.path == '/active_users' else '' }}"><a href="/active_users">Active users</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/songs">C418 Songs</a></li>
+                    <li><a href="/active_users">Active users</a></li>
                     <li><a href="/articles">Articles</a></li>
                 </ul>
             </div>
