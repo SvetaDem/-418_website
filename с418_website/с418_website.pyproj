@@ -18,8 +18,14 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>с418_website</Name>
     <RootNamespace>с418_website</RootNamespace>
-    <InterpreterId>
-    </InterpreterId>
+    <InterpreterId>MSBuild|env2|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>unittest</TestFramework>
+    <UnitTestPattern>test*.py</UnitTestPattern>
+    <UnitTestRootDirectory>./tests</UnitTestRootDirectory>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>unittest</TestFramework>
+    <UnitTestPattern>test*.py</UnitTestPattern>
+    <UnitTestRootDirectory>.\tests</UnitTestRootDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,19 +36,46 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="forms\active_users_form.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app.py" />
+    <Compile Include="articles_app.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="routes.py" />
+    <Compile Include="tests\test_articles.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\__init__.py">
+    <Compile Include="forms\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="routes.py" />
+    <Compile Include="tests\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\test_valid_phone.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="forms\valid_phone.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="tests\" />
+    <Folder Include="forms\" />
     <Folder Include="static\" />
     <Folder Include="static\content\" />
     <Folder Include="static\fonts\" />
     <Folder Include="static\images\tabs\" />
     <Folder Include="static\scripts\" />
     <Folder Include="static\images\" />
+    <Folder Include="tests\" />
     <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="articles.json" />
     <Content Include="requirements.txt" />
     <Content Include="static\content\bootstrap.css" />
     <Content Include="static\content\bootstrap.min.css" />
@@ -65,6 +98,9 @@
     <Content Include="static\scripts\modernizr-2.6.2.js" />
     <Content Include="static\scripts\respond.js" />
     <Content Include="static\scripts\respond.min.js" />
+    <Content Include="static\scripts\user_form.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="static\scripts\_references.js" />
     <Content Include="static\images\148_soundtrack.jpg" />
     <Content Include="static\images\Face.jpg" />
@@ -78,6 +114,8 @@
     <Content Include="static\images\SYOSD_soundtrack.jpg" />
     <Content Include="static\images\vibe.jpg" />
     <Content Include="views\about.tpl" />
+    <Content Include="views\articles.tpl" />
+    <Content Include="views\active_users.tpl" />
     <Content Include="views\biography.tpl" />
     <Content Include="views\contact.tpl" />
     <Content Include="views\index.tpl" />
