@@ -84,8 +84,6 @@ def music_tab():
         message='Tabs for selected music by the C418.',
         year=datetime.now().year
     )
-        message='Tabs for selected music by the C418.'
-    )
 
 @route('/active_users')
 @view('active_users')

@@ -22,7 +22,7 @@
     <TestFramework>unittest</TestFramework>
     <UnitTestPattern>test*.py</UnitTestPattern>
     <UnitTestRootDirectory>./tests</UnitTestRootDirectory>
-    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env2|$(MSBuildProjectFullPath)</InterpreterId>
     <TestFramework>unittest</TestFramework>
     <UnitTestPattern>test*.py</UnitTestPattern>
     <UnitTestRootDirectory>.\tests</UnitTestRootDirectory>
@@ -48,6 +48,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tests\__init__.py">
+    </Compile>
     <Compile Include="forms\__init__.py">
       <SubType>Code</SubType>
     </Compile>
