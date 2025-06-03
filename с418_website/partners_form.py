@@ -60,12 +60,23 @@ def validate_name(name):
     return True, ""
 
 def validate_description(description):
-    """Validates description length (3 to 200 characters)."""
-    if len(description) < 3:
-        return False, "Description must be at least 3 characters long"
-    if len(description) > 200:
+    """Validates description: at least 5 letters (a-z, A-Z) and total length up to 200 characters.
+    Args:
+        description (str): Description to validate.
+    Returns:
+        tuple: (bool, str) - (is_valid, error_message) where is_valid is True if valid, False otherwise.
+    """
+    # Extract only letters (a-z, A-Z) using regex
+    letters = re.findall(r'[a-zA-Z]', description)
+    letter_count = len(letters)  # Count the number of letters
+    
+    if letter_count < 5:  # Check if there are at least 5 letters
+        return False, "Description must contain at least 5 letters (a-z, A-Z)"
+    
+    if len(description) > 200:  # Check if total length exceeds 200 characters
         return False, "Description must not exceed 200 characters"
-    return True, ""
+    
+    return True, ""  # Return True with empty error message if valid
 
 def get_partners_data():
     """Returns partners data, errors, form data, and context variables."""

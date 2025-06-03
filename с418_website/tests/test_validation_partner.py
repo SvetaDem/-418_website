@@ -123,30 +123,32 @@ class TestValidation(unittest.TestCase):
                 self.assertNotEqual(msg, "", f"Error message should be present for {name}")
 
     def test_validate_description(self):
-        """Tests description validation (3 to 200 characters)."""
-
+        """Test description validation: at least 5 letters (a-z, A-Z), total length up to 200 characters."""
+        # Valid descriptions: must have at least 5 letters
         valid_descriptions = [
-            "A music production company.",  # Short but valid
-            "Collaborates with C418 to produce Minecraft soundtracks and events.",  
-            "Specializes in audio engineering and music distribution for gaming industries."  
+            "abcde",  # Exactly 5 letters
+            "A music company",  # More than 5 letters (A, m, u, s, i, c, c, o, m, p, a, n, y)
+            "ab12cde!",  # 5 letters (a, b, c, d, e) with numbers and symbols
+            "hello123 world456"  # More than 5 letters with numbers
         ]
-        for desc in valid_descriptions:
-            with self.subTest(desc=desc):
-                is_valid, msg = validate_description(desc)
-                self.assertTrue(is_valid, f"Valid description {desc} should pass")
-                self.assertEqual(msg, "", f"Message should be empty for {desc}")
-
-
+    
+        # Invalid descriptions: less than 5 letters or too long
         invalid_descriptions = [
-            "Hi",  # Too short (less than 3 characters)
-            "This description is way too long to be accepted because it exceeds the maximum allowed length of two hundred characters. We are adding more words to ensure it goes beyond the limit, talking about music, partnerships, and collaborations with C418 in the context of Minecraft soundtracks and more.",  # Too long (more than 200 characters)
-            ""     # Empty string
+            "ab12!",  # Only 2 letters (a, b)
+            "12345",  # No letters
+            "ab cd",  # Only 4 letters (a, b, c, d) with a space
+            "x" * 201  # Too long (over 200 characters)
         ]
+
+        # Test valid descriptions
+        for desc in valid_descriptions:
+            result, error = validate_description(desc)
+            self.assertTrue(result, f"Description '{desc}' should be valid, but got error: {error}")
+
+        # Test invalid descriptions
         for desc in invalid_descriptions:
-            with self.subTest(desc=desc):
-                is_valid, msg = validate_description(desc)
-                self.assertFalse(is_valid, f"Invalid description {desc} should fail")
-                self.assertNotEqual(msg, "", f"Error message should be present for {desc}")
+            result, error = validate_description(desc)
+            self.assertFalse(result, f"Description '{desc}' should be invalid")
 
 if __name__ == '__main__':
     unittest.main()
