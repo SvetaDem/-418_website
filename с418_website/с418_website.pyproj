@@ -19,6 +19,9 @@
     <Name>с418_website</Name>
     <RootNamespace>с418_website</RootNamespace>
     <InterpreterId>MSBuild|env2|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>unittest</TestFramework>
+    <UnitTestPattern>test*.py</UnitTestPattern>
+    <UnitTestRootDirectory>./tests</UnitTestRootDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,6 +43,7 @@
     <Folder Include="static\content\" />
     <Folder Include="static\fonts\" />
     <Folder Include="static\images\tabs\" />
+    <Folder Include="static\tests\" />
     <Folder Include="static\scripts\" />
     <Folder Include="static\images\" />
     <Folder Include="views\" />
