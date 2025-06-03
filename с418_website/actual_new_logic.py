@@ -1,3 +1,4 @@
+﻿# -*- coding: utf-8 -*-
 import json
 from datetime import datetime, timedelta
 import re
@@ -5,64 +6,72 @@ import os
 from bottle import request, response
 from urllib.parse import quote, unquote
 
-# File for storing songs in JSON format
+# Файл для хранения песен в формате JSON
 SONGS_FILE = 'songs.json'
 
-# List of profane words for validation
+# Список запрещённых слов для проверки на нецензурность
 PROFANITY_LIST = [
     "damn", "hell", "shit", "fuck", "bitch", "asshole", "crap", "piss", "dick", "cock",
     "bastard", "slut", "whore", "faggot", "nigger", "chink", "kike", "spic", "retard", "cunt"
 ]
 
+# Инициализация файла songs.json, если он не существует
 def init_songs_file():
-    """Initialize songs.json if it doesn't exist."""
+    """Создаёт пустой файл songs.json, если он отсутствует."""
     if not os.path.exists(SONGS_FILE):
         with open(SONGS_FILE, 'w', encoding='utf-8') as f:
             json.dump([], f)
 
+# Загрузка песен из файла songs.json
 def load_songs():
-    """Load songs from songs.json."""
+    """Читает данные песен из файла songs.json."""
     init_songs_file()
     try:
         with open(SONGS_FILE, 'r', encoding='utf-8') as f:
             return json.load(f)
     except json.JSONDecodeError:
-        print("Error: songs.json is corrupted, returning empty list")
+        print("Error: songs.json file is corrupted, returning an empty list")
         return []
 
+# Сохранение песен в файл songs.json
 def save_songs(songs):
-    """Save songs to songs.json."""
+    """Записывает список песен в файл songs.json."""
     try:
         with open(SONGS_FILE, 'w', encoding='utf-8') as f:
             json.dump(songs, f, indent=4, ensure_ascii=False)
     except Exception as e:
         raise ValueError(f"Failed to save songs: {str(e)}")
 
+# Проверка на повторяющиеся символы
 def has_repeated_chars(s):
-    """Check for 4 or more repeated characters."""
+    """Проверяет наличие 4 или более одинаковых символов подряд."""
     pattern = r'(.)\1{3,}'
     return bool(re.search(pattern, s))
 
+# Проверка минимального количества слов
 def has_minimum_words(text, min_words=3):
-    """Check for minimum number of words."""
+    """Проверяет, что текст содержит минимум указанное количество слов."""
     words = [word for word in text.split() if word]
     return len(words) >= min_words
 
+# Проверка наличия значимых слов
 def has_meaningful_words(text):
-    """Check for at least one meaningful word (4+ letters, no repeats)."""
+    """Проверяет наличие хотя бы одного значимого слова (4+ буквы, без повторов)."""
     words = [word for word in text.split() if word]
     for word in words:
         if len(word) >= 4 and re.match(r'^[a-zA-Z]+$', word) and not has_repeated_chars(word):
             return True
     return False
 
+# Проверка наличия эмодзи
 def contains_emoji(text):
-    """Check for emojis in text."""
+    """Проверяет наличие эмодзи в тексте."""
     emoji_pattern = r'[\U0001F300-\U0001F9FF\U0001F000-\U0001F02F\U0001F0A0-\U0001F0FF\U0001F680-\U0001F6FF]'
     return bool(re.search(emoji_pattern, text))
 
+# Проверка формата и корректности даты
 def is_valid_date(date_str):
-    """Validate date format and correctness (DD.MM.YYYY)."""
+    """Проверяет, что дата соответствует формату DD.MM.YYYY и является валидной."""
     pattern = r'^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.\d{4}$'
     if not re.match(pattern, date_str):
         return False
@@ -72,22 +81,24 @@ def is_valid_date(date_str):
     except ValueError:
         return False
 
+# Проверка диапазона дат
 def is_valid_date_range(date_str):
-    """Check if date is not before today and not more than 10 years from today."""
+    """Проверяет, что дата не раньше сегодняшнего дня и не позже 10 лет от текущей даты."""
     try:
         input_date = datetime.strptime(date_str, '%d.%m.%Y').date()
         current_date = datetime.now().date()
         max_date = current_date + timedelta(days=365 * 10)  # 10 years
         if input_date < current_date:
-            return False, "Date cannot be before today."
+            return False, "Date cannot be earlier than today."
         if input_date > max_date:
             return False, "Date cannot be more than 10 years from today."
         return True, ""
     except ValueError:
         return False, "Invalid date."
 
+# Проверка валидности имени автора
 def is_valid_author(author):
-    """Validate author/name field (3-50 characters, English only)."""
+    """Проверяет, что имя автора соответствует требованиям (3-50 символов, только английский)."""
     pattern = r'^[a-zA-Z][a-zA-Z0-9\s\-_]{1,48}[a-zA-Z0-9]$'
     if not re.match(pattern, author):
         return False
@@ -101,10 +112,13 @@ def is_valid_author(author):
         return False
     return True
 
+# Проверка валидности описания
 def is_valid_description(description):
-    """Validate description field (10-1000 characters, English only)."""
+    """Проверяет, что описание соответствует требованиям (10-1000 символов, только английский, без HTML)."""
     if len(description) < 10 or len(description) > 1000:
         return False
+    if description.lower() == request.forms.getunicode('author', '').strip().lower():
+        return False  # Description must not match the author name
     html_pattern = (
         r'<(script|style|iframe|object|embed|form|input|button|textarea|meta|link|base|body|html|head)\b'
         r'|<[^>]+(on\w+)=|javascript:'
@@ -126,36 +140,38 @@ def is_valid_description(description):
     pattern = r'^[a-zA-Z0-9\s\-.,!?:;\'"()]+$'
     return bool(re.match(pattern, description))
 
+# Проверка на наличие нецензурных слов
 def contains_profanity(text):
-    """Check for profanity in text."""
+    """Проверяет наличие запрещённых слов в тексте."""
     text_lower = text.lower()
     for word in PROFANITY_LIST:
         if re.search(rf'\b{word}\b', text_lower):
             return True
     return False
 
+# Получение данных песен с фильтрацией
 def get_songs_data():
-    """Retrieve songs, errors, and form data with filtering."""
+    """Получает список песен, ошибки и данные формы с учётом фильтрации."""
     songs = load_songs()
     current_date = datetime.now().date()
     
-    # Filter out songs with dates before today
+    # Фильтрация песен с датами до текущего дня
     songs = [song for song in songs if datetime.strptime(song['date'], '%d.%m.%Y').date() >= current_date]
     
     filter_type = request.query.getunicode('filter', 'recent')
     
     try:
         if filter_type == 'recent':
-            # Sort by closest to current date (most recent first)
+            # Сортировка по ближайшим к текущей дате (сначала самые недавние)
             songs.sort(key=lambda x: (datetime.strptime(x['date'], '%d.%m.%Y').date() - current_date).days)
         elif filter_type == 'older':
-            # Sort by furthest from current date (future dates first)
+            # Сортировка по наиболее далёким от текущей даты (сначала будущие)
             songs.sort(key=lambda x: (datetime.strptime(x['date'], '%d.%m.%Y').date() - current_date).days, reverse=True)
         else:
-            # Default: sort by date, newest first
+            # По умолчанию: сортировка по дате, сначала новые
             songs.sort(key=lambda x: datetime.strptime(x['date'], '%d.%m.%Y'), reverse=True)
     except (KeyError, ValueError):
-        print("Warning: Skipping sorting due to invalid date format")
+        print("Warning: skipping sorting due to invalid date format")
 
     errors = request.query.getunicode('errors', '').split('|') if request.query.getunicode('errors') else []
     form_data = {
@@ -165,35 +181,36 @@ def get_songs_data():
     }
     return songs, errors, form_data
 
+# Обработка отправки формы с песней
 def handle_song_submission():
-    """Handle song form submission with validation."""
+    """Обрабатывает отправку формы с песней, включая валидацию."""
     author = request.forms.getunicode('author', '').strip()
     description = request.forms.getunicode('description', '').strip()
     date = request.forms.getunicode('date', '').strip()
 
     errors = []
 
-    # Validate author/name
+    # Валидация имени автора
     if not author:
-        errors.append("Author/Name is required.")
+        errors.append("Author/Name field is required.")
     elif not is_valid_author(author):
-        errors.append("Author/Name must be 3-50 characters (letters, digits, spaces, hyphens, underscores, English only, no repeated chars or only digits).")
+        errors.append("Author name must be 3-50 characters (letters, numbers, spaces, hyphens, underscores, only English, no repeats or only numbers).")
     elif contains_profanity(author):
-        errors.append("Author/Name contains inappropriate language.")
+        errors.append("Author name contains inappropriate words.")
     elif contains_emoji(author):
-        errors.append("Author/Name cannot contain emojis.")
+        errors.append("Author name cannot contain emojis.")
 
-    # Validate description
+    # Валидация описания
     if not description:
-        errors.append("Description is required.")
+        errors.append("Description field is required.")
     elif not is_valid_description(description):
-        errors.append("Description must be 10-1000 characters, no HTML tags, English only, at least 3 words including one meaningful word.")
+        errors.append("Description must be 10-1000 characters, no HTML tags, only English, minimum 3 words including one meaningful word.")
     elif contains_profanity(description):
-        errors.append("Description contains inappropriate language.")
+        errors.append("Description contains inappropriate words.")
 
-    # Validate date
+    # Валидация даты
     if not date:
-        errors.append("Date is required.")
+        errors.append("Date field is required.")
     elif not is_valid_date(date):
         errors.append("Date must be in DD.MM.YYYY format and valid (e.g., 03.06.2025).")
     else:
@@ -201,7 +218,7 @@ def handle_song_submission():
         if not is_valid:
             errors.append(error_msg)
 
-    # Handle errors
+    # Обработка ошибок
     if errors:
         error_str = quote('|'.join(errors), safe='')
         author = quote(author, safe='')
@@ -212,7 +229,7 @@ def handle_song_submission():
         response.set_header('Location', f'/actual_new?errors={error_str}&author={author}&description={description}&date={date}')
         return
 
-    # Add new song
+    # Добавление новой песни
     songs = load_songs()
     songs.append({
         'author': author,
@@ -221,7 +238,7 @@ def handle_song_submission():
     })
     try:
         save_songs(songs)
-        print("Song saved successfully")
+        print("Song successfully saved")
     except ValueError as e:
         errors.append(str(e))
         error_str = quote('|'.join(errors), safe='')
@@ -233,7 +250,7 @@ def handle_song_submission():
         response.set_header('Location', f'/actual_new?errors={error_str}&author={author}&description={description}&date={date}')
         return
 
-    # Successful redirect
+    # Успешное перенаправление
     print("Redirecting to /actual_new")
     response.status = 302
     response.set_header('Location', '/actual_new')

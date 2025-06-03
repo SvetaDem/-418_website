@@ -43,6 +43,9 @@
     <Compile Include="static\tests\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="test_actual_new.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="static\" />
